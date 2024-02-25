@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const Navigation = () =>{
     return(
-        <div className={'container mx-auto flex justify-between items-center py-8 '}>
+        <div className={'container mx-auto hidden md:flex justify-between items-center py-8 '}>
             <button className={'py-3 px-5 flex gap-1 items-center bg-red-custom text-white font-medium rounded-lg'}>
                 <Pen/>
                 خودت طراحیش کن !

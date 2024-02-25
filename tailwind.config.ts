@@ -9,7 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily : {
-        yekan : 'IRANYekanX'
+        yekan : 'yekan',
+        estedad : 'estedad'
       },
       colors : {
         red : {

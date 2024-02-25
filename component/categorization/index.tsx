@@ -5,9 +5,9 @@ const Categorization = () =>{
     return(
         <div className={'w-full mt-10'}>
             <div className={'w-full flex gap-1 items-center'}>
-                <Star/>
+                <Star className={'size-10'}/>
                 <p className={'text-xl font-bold whitespace-nowrap'}>دسته بندی محصولات</p>
-                <hr className={'w-full h-3 self-end'}/>
+                <hr className={'w-10/12 h-3 self-end'}/>
             </div>
             <div className={'w-full flex gap-6 mt-6 items-center justify-center mb-10'}>
                 <CategorizationItem image={'../../img/cover mobile.png'} name={'قاب موبایل'}/>
