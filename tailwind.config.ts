@@ -1,10 +1,12 @@
-import type { Config } from "tailwindcss";
+import withMT from "@material-tailwind/react/utils/withMT";
 
-const config: Config = {
+module.exports = withMT({
   content: [
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./component/**/*.{js,ts,jsx,tsx,mdx}",
+      "./pages/**/*.{js,ts,jsx,tsx,mdx}",
+   "./component/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
+    "path-to-your-node_modules/@material-tailwind/react/components/**/*.{js,ts,jsx,tsx}",
+    "path-to-your-node_modules/@material-tailwind/react/theme/components/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     extend: {
@@ -19,13 +21,16 @@ const config: Config = {
         },
         pink : {
           light : '#E5C1C4'
+        },
+        gray : {
+          custom : '#f4f5f9'
         }
       },
       backgroundImage : {
-        hero : 'url("/public/background/bg-hero.png")'
+        hero : 'url("/background/bg-hero.png")',
+        designer : 'url("/img/Rectangle 944.svg")'
       }
     },
   },
   plugins: [],
-};
-export default config;
+});
