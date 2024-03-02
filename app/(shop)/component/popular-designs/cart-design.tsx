@@ -5,7 +5,7 @@ import Gallery from "@/app/(shop)/component/popular-designs/icon/gallery";
 const CartDesign = () =>{
     return(
         <div className={'w-full rounded-xl border p-3 flex flex-col items-center '}>
-                <Image src={'/img/img-stiker.png'} alt={''} width={96} height={96} className={'object-cover'}/>
+                <img src={'/img/img.png'} alt={''} width={96} height={96} className={'object-cover md:w-64 md:h-74'}/>
                 <div className={'w-full flex items-center justify-between mt-3'}>
                     <p className={'text-lg font-medium'}>
                         استیکر
