@@ -27,6 +27,7 @@ import {
 } from "@heroicons/react/24/outline";
 import React from "react";
 import LogoMobile from "@/component/layout/header/icon/logo-mobile";
+import {useRouter} from "next/navigation";
 
 export function Sidebar() {
     const [open, setOpen] = React.useState(0);
@@ -35,7 +36,7 @@ export function Sidebar() {
     const handleOpen = (value : number) => {
         setOpen(open === value ? 0 : value);
     };
-
+    const router = useRouter()
     return (
         <Card placeholder={''} className="h-[calc(100vh-2rem)] w-full max-w-[20rem] p-4 shadow-xl shadow-blue-gray-900/5">
             <div className="mb-2 flex items-center gap-4 p-4">
@@ -116,7 +117,7 @@ export function Sidebar() {
                                 </ListItemPrefix>
                                 سبد خرید
                             </ListItem>
-                            <ListItem placeholder={''}>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/product')}>
                                 <ListItemPrefix placeholder={''}>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>

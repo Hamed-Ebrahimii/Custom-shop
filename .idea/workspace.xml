@@ -9,20 +9,19 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="fix bog">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(authentication)/layout.tsx" afterDir="false" />
+    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase one">
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/box.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/chart/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/Table.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/query/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/login/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login-admin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/designer-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/designer-signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/selected-product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[product-id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/user-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/user-signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/global.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,7 +42,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="develop" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -77,28 +76,28 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.cidr.known.project.marker": "true",
-    "RunOnceActivity.readMode.enableVisualFormatting": "true",
-    "cf.first.check.clang-format": "false",
-    "cidr.known.project.marker": "true",
-    "git-widget-placeholder": "develop",
-    "last_opened_file_path": "D:/html-js-maktab/final project next/app/(shop)/users-profile",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_interpreter_path": "node",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
-    "ts.external.directory.path": "D:\\html-js-maktab\\final project next\\node_modules\\typescript\\lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
+    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
+    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;phase-two&quot;,
+    &quot;last_opened_file_path&quot;: &quot;D:/html-js-maktab/final project next/app/(shop)/users-profile&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;D:\\html-js-maktab\\final project next\\node_modules\\typescript\\lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\html-js-maktab\final project next\app\(shop)\users-profile" />
@@ -108,10 +107,11 @@
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\html-js-maktab\final project next\app\(authentication)" />
+      <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
       <recent name="D:\html-js-maktab\final project next\app\(admin)" />
       <recent name="D:\html-js-maktab\final project next\public\img" />
       <recent name="D:\html-js-maktab\final project next\app" />
-      <recent name="D:\html-js-maktab\final project next\public\assets\font" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -135,6 +135,7 @@
       <workItem from="1709119149828" duration="10636000" />
       <workItem from="1709402635392" duration="3255000" />
       <workItem from="1709454855648" duration="4839000" />
+      <workItem from="1709483902809" duration="4764000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -181,6 +182,17 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />

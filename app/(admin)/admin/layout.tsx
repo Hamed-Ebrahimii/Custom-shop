@@ -3,6 +3,7 @@ import "../../globals.css";
 import React, {ReactNode} from "react";
 import {ThemeProvider} from "../../../component/material/index";
 import Sidebar from "@/app/(admin)/admin/component/sidebar";
+import Query from "@/component/query";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -17,12 +18,14 @@ export default function RootLayout({children}: Readonly<{
         <html lang="fa" dir={'rtl'}>
         <ThemeProvider>
         <body className={'font-yekan bg-gray-custom'}>
-        <div className={'w-full flex items-center'}>
-            <div className={'w-1/6'}>
-                <Sidebar/>
+            <div className={'w-full flex gap-6 pl-6 mt-5'}>
+                <div className={'w-1/6'}>
+                    <Sidebar/>
+                </div>
+                <Query>
+                {children}
+                </Query>
             </div>
-        {children}
-        </div>
         </body>
         </ThemeProvider>
         </html>

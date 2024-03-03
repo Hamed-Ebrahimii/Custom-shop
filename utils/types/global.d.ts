@@ -25,3 +25,26 @@ interface ILogin {
         }
     }
 }
+interface ResponseProduct {
+    "status": string,
+    "page": number,
+    "per_page": number,
+    "total": number,
+    "total_pages": number,
+    "data": {
+        "products": Product[]
+    }
+}
+interface Product {
+    "_id": string,
+    "category": string,
+    "subcategory": string,
+    "name": string,
+    "price": number,
+    "quantity": number,
+    "brand": string,
+    "description": string,
+    "thumbnail": string,
+    "images": string[],
+    "slugname": string
+}
