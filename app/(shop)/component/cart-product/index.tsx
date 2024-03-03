@@ -5,7 +5,7 @@ const CartProduct = () =>{
     return(
         <div className={'w-full p-4 rounded-lg border flex flex-col'}>
 
-                <Image src={'/img/img.png'} alt={''} width={96} height={96} className={'object-cover rounded-lg self-center md:w-full'} />
+                <img src={'/img/img.png'} alt={''} width={96} height={96} className={'object-cover rounded-lg self-center md:w-full'} />
 
             <div className={'w-full mt-4 flex items-center justify-between'}>
                 <p className={'text-lg font-bold'}>تیشرت زنانه</p>

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import CartProduct from "@/app/(shop)/component/cart-product";
+import Pocket from "@/app/(shop)/component/top-designers/icon/pocket";
 
 const LatestDesigns = () =>{
     return(
@@ -11,13 +12,17 @@ const LatestDesigns = () =>{
                     <Link href={''} className={'text-red-custom '}>بیشتر</Link>
                 </button>
             </div>
-            <div className={'w-full flex flex-col items-center mt-2'}>
-                <p className={'font-medium'}>
-                    محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید
-                </p>
-                <Image src={'/img/Group 29.png'} alt={''} width={131} height={126} className={'mt-3 object-cover'}/>
-            </div>
-            <div className={'w-full mt-3 grid grid-rows-2 grid-cols-2 gap-4'}>
+
+            <div className={'w-full mt-3 grid grid-rows-2 grid-cols-2 gap-4 md:grid-cols-4 md:grid-rows-2'}>
+                <div className={'w-full flex flex-col items-center mt-2 justify-around'}>
+                    <p className={'font-medium flex-1 md:text-3xl md:font-bold md:text-gray-800 md:mt-5'}>
+                        محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید
+                    </p>
+                    <Pocket/>
+                </div>
+                <CartProduct/>
+                <CartProduct/>
+                <CartProduct/>
                 <CartProduct/>
                 <CartProduct/>
                 <CartProduct/>
