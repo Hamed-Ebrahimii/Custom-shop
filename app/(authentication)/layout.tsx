@@ -1,8 +1,8 @@
+
 import type { Metadata } from "next";
-import "../../globals.css";
+import "../globals.css";
 import React, {ReactNode} from "react";
-import {ThemeProvider} from "../../../component/material/index";
-import Sidebar from "@/app/(admin)/admin/component/sidebar";
+import {ThemeProvider} from "../../component/material";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -16,13 +16,8 @@ export default function RootLayout({children}: Readonly<{
     return (
         <html lang="fa" dir={'rtl'}>
         <ThemeProvider>
-        <body className={'font-yekan bg-gray-custom'}>
-        <div className={'w-full flex items-center'}>
-            <div className={'w-1/6'}>
-                <Sidebar/>
-            </div>
+        <body className={'font-yekan'}>
         {children}
-        </div>
         </body>
         </ThemeProvider>
         </html>
