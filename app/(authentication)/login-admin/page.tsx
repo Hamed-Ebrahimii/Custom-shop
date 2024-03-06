@@ -6,27 +6,27 @@ import {zodResolver} from "@hookform/resolvers/zod";
 import {loginValidation, loginValidationType} from "@/utils/validation/login-validation";
 import {useMutation} from "@tanstack/react-query";
 import {loginAdmin} from "@/api/login-admin";
-import {useEffect} from "react";
 import {useRouter} from "next/navigation";
-
-
+import {useEffect} from "react";
 const Login = () =>{
+    const router = useRouter()
     const {control  , reset , handleSubmit , formState : {errors}} = useForm<loginValidationType>({
         resolver : zodResolver(loginValidation),
         mode : 'onBlur'
     })
-    const { status , isPending , mutate} = useMutation({
+    const { status , isPending , mutate  } = useMutation({
         mutationKey : ['loginValidation'],
         mutationFn : (data : loginValidationType) => loginAdmin(data)
     })
-    const router = useRouter()
     const onSubmit = async (data : loginValidationType) =>{
-       const response =  await loginAdmin(data)
-        if (response.data.status === 'success'){
-            router.push('/admin')
-        }
-    }
 
+          mutate(data)
+    }
+    useEffect(() => {
+        if (status === "success"){
+           router.push('/admin')
+        }
+    }, [status]);
     return(
         <div className={'w-full h-screen flex flex-col gap-4 justify-center items-center bg-gray-custom'}>
             <h1 className={'text-2xl font-medium text-gray-600'} >خوش آمدی (:</h1>
@@ -57,7 +57,7 @@ const Login = () =>{
                         { errors.password && <p className={'text-red-400 text-xs '}>{errors.password.message}</p>}
                     </div>
                     <div className={'w-2/4'}>
-                        <Button type={'submit'} placeholder={''} color="red" className={'w-full disabled:opacity-50'} disabled={isPending}> {isPending ? 'لطفا صبر کنید' : 'ورود'}</Button>
+                        <Button type={'submit'} placeholder={''} color="red" className={'w-full disabled:opacity-50'} loading={isPending}> {isPending ? 'لطفا صبر کنید' : 'ورود'}</Button>
                     </div>
                 </form>
             </div>

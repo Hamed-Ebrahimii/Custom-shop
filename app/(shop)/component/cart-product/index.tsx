@@ -4,8 +4,10 @@ import {VscHeart} from "react-icons/vsc";
 const CartProduct = () =>{
     return(
         <div className={'w-full p-4 rounded-lg border flex flex-col'}>
+                <figure className={'relative w-full h-[300px]'}>
 
-                <img src={'/img/img.png'} alt={''} width={96} height={96} className={'object-cover rounded-lg self-center md:w-full'} />
+                <Image   src={'/img/img.png'} alt={''} fill={true} className={'object-cover rounded-lg self-center md:w-full'} />
+                </figure>
 
             <div className={'w-full mt-4 flex items-center justify-between'}>
                 <p className={'text-lg font-bold'}>تیشرت زنانه</p>

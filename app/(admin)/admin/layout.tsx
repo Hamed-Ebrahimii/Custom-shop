@@ -4,6 +4,7 @@ import React, {ReactNode} from "react";
 import {ThemeProvider} from "../../../component/material/index";
 import Sidebar from "@/app/(admin)/admin/component/sidebar";
 import Query from "@/component/query";
+import {theme} from "@/component/material/theme";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -16,7 +17,7 @@ export default function RootLayout({children}: Readonly<{
 }>) {
     return (
         <html lang="fa" dir={'rtl'}>
-        <ThemeProvider>
+        <ThemeProvider value={theme}>
         <body className={'font-yekan bg-gray-custom'}>
             <div className={'w-full flex gap-6 pl-6 mt-5'}>
                 <div className={'w-1/6'}>

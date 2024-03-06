@@ -9,18 +9,32 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase one">
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/box.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/chart/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/Table.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/query/index.tsx" afterDir="false" />
+    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="add table admin page">
+      <change afterPath="$PROJECT_DIR$/api/addProduct.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/getAllCategories.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/getAllProduct.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/getAllSubcategories.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-edite.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/loading/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/material/theme.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/modal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/core/action/getSubcategoryByCategoryID.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/validation/product-validation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/login-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/login-admin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/Table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/Table.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/core/service/http-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/service/http-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tools/getToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getToken.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/global.d.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -135,7 +149,13 @@
       <workItem from="1709119149828" duration="10636000" />
       <workItem from="1709402635392" duration="3255000" />
       <workItem from="1709454855648" duration="4839000" />
-      <workItem from="1709483902809" duration="4764000" />
+      <workItem from="1709483902809" duration="6705000" />
+      <workItem from="1709545541282" duration="5936000" />
+      <workItem from="1709582734414" duration="3894000" />
+      <workItem from="1709621403698" duration="11630000" />
+      <workItem from="1709635903065" duration="11691000" />
+      <workItem from="1709720240788" duration="145000" />
+      <workItem from="1709720913808" duration="10368000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -177,7 +197,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709403569100</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="add table admin page">
+      <option name="closed" value="true" />
+      <created>1709489132023</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1709489132024</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -203,6 +231,7 @@
     <MESSAGE value="first commit" />
     <MESSAGE value="add home page" />
     <MESSAGE value="fix bog" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix bog" />
+    <MESSAGE value="add table admin page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add table admin page" />
   </component>
 </project>

@@ -111,13 +111,13 @@ export function Sidebar() {
                     </ListItem>
                     <AccordionBody className="py-1">
                         <List placeholder={''} className="p-0">
-                            <ListItem placeholder={''}>
+                            <ListItem placeholder={''} onClick={()=> router.push('inventory')}>
                                 <ListItemPrefix placeholder={''}>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>
-                                سبد خرید
+                                موجودی/قیمت
                             </ListItem>
-                            <ListItem placeholder={''} onClick={()=> router.push('/admin/product')}>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/product?page=1')}>
                                 <ListItemPrefix placeholder={''}>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>

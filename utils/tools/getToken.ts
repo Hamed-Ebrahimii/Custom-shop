@@ -1,6 +1,4 @@
-"use server"
-import {cookies} from "next/headers";
-
+"use client"
 export const getToken = () =>{
-   return  cookies().get('token')
+   return  sessionStorage.getItem('token')
 }

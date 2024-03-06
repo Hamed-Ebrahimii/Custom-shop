@@ -35,6 +35,14 @@ interface ResponseProduct {
         "products": Product[]
     }
 }
+interface ResponseApi <T>{
+    "status": string,
+    "page": number,
+    "per_page": number,
+    "total": number,
+    "total_pages": number,
+    "data": T
+}
 interface Product {
     "_id": string,
     "category": string,
@@ -47,4 +55,26 @@ interface Product {
     "thumbnail": string,
     "images": string[],
     "slugname": string
+}
+interface Category {
+    "categories": {
+            "_id": string,
+            "name": string,
+            "icon": string,
+            "createdAt": string,
+            "updatedAt": string,
+            "slugname": string
+        }[]
+}
+interface SubCategories {
+    "subcategories":
+        {
+            "_id": string,
+            "name": string,
+            "icon": string,
+            "createdAt": string,
+            "updatedAt": string,
+            "slugname": string,
+            "category": string,
+        }[]
 }

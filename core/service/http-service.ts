@@ -3,31 +3,30 @@ import {getToken} from "@/utils/tools/getToken";
 
 const httpService = axios.create({
     baseURL : 'http://localhost:8000',
-    headers : {
-        'Accept': 'application/json'
-    }
+
 })
 const baseApi = async <T> (url : string , option : AxiosRequestConfig) : Promise<AxiosResponse<T>> =>{
     return await httpService(url, option)
 }
 
-export const Create = async <T> (url : string , data  : any) : Promise<AxiosResponse<T>> =>{
+export const Create = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
     return await baseApi(url, {
         method : 'POST',
-        data,
         headers : {
             Authorization : 'Bearer ' + getToken()
-        }
+        },
+        data
     })
 }
 
-export const Update = async <T> (url : string , data : T) : Promise<AxiosResponse<T>> =>{
+
+export const Update = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
     return await baseApi(url, {
-        method : 'PUT',
-        data,
+        method : 'PATCH',
         headers : {
             Authorization : 'Bearer ' + getToken()
-        }
+        },
+        data
     })
 }
 export const Delete = async (url : string ) : Promise<AxiosResponse> =>{
