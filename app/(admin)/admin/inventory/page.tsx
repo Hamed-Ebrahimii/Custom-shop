@@ -1,19 +1,17 @@
 "use client"
 import {useSearchParams} from "next/navigation";
-import {useState} from "react";
 import {useQuery} from "@tanstack/react-query";
 import {getAllProduct} from "@/api/getAllProduct";
 import {Button, CardFooter, CardHeader, Input, Tab, Tabs, TabsHeader, Typography} from "@material-tailwind/react";
 import {UserPlusIcon} from "@heroicons/react/24/solid";
 import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
-import Table from "@/app/(admin)/admin/component/table/Table";
-import FullFeaturedCrudGrid from "@/app/(admin)/admin/component/table/table-edite";
-
+import TableEdite from "@/app/(admin)/admin/component/table/table-edite";
+import {useState} from "react";
 const Inventory = () =>{
     const params = useSearchParams()
     const page = params.get('page')
     const perPage = params.get('perPage')
-
+    const [edit , setEdit] = useState(true)
     const {data} = useQuery({
         queryKey : [page , perPage],
         queryFn : () => getAllProduct(page! , perPage!)
@@ -69,12 +67,12 @@ const Inventory = () =>{
                         </div>
                     </div>
                         <div className={'w-full flex items-center justify-end mt-4'}>
-                            <Button placeholder={''} className="flex items-center gap-3" size="sm" >
+                            <Button disabled={edit} placeholder={''} className="flex items-center gap-3" size="sm" >
                                 <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> ذخیره
                             </Button>
                         </div>
                 </CardHeader>
-
+                <TableEdite setEdite={setEdit} tableHeade={['تصویر',"نام" , "تعداد"  , "قیمت"]} tableRow={data?.data.data.products || []}/>
                 <CardFooter placeholder={''} className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Typography placeholder={''} variant="small" color="blue-gray" className="font-normal">
                         صفحه 1 از 10
