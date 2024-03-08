@@ -1,5 +1,5 @@
 "use client"
-import {useSearchParams} from "next/navigation";
+import {useRouter, useSearchParams} from "next/navigation";
 import {useQuery} from "@tanstack/react-query";
 import {getAllProduct} from "@/api/getAllProduct";
 import {Button, CardFooter, CardHeader, Input, Tab, Tabs, TabsHeader, Typography} from "@material-tailwind/react";
@@ -8,13 +8,15 @@ import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import TableEdite from "@/app/(admin)/admin/component/table/table-edite";
 import {useState} from "react";
 const Inventory = () =>{
+
+
     const params = useSearchParams()
     const page = params.get('page')
-    const perPage = params.get('perPage')
+    const filter = params.get('filter')
     const [edit , setEdit] = useState(true)
     const {data} = useQuery({
-        queryKey : [page , perPage],
-        queryFn : () => getAllProduct(page! , perPage!)
+        queryKey : [page],
+        queryFn : () => getAllProduct(page! )
     })
     const TABS = [
         {
@@ -30,6 +32,7 @@ const Inventory = () =>{
             value: "unmonitored",
         },
     ];
+    const router = useRouter()
     return(
         <>
 
@@ -67,21 +70,21 @@ const Inventory = () =>{
                         </div>
                     </div>
                         <div className={'w-full flex items-center justify-end mt-4'}>
-                            <Button disabled={edit} placeholder={''} className="flex items-center gap-3" size="sm" >
+                            <Button disabled={edit} onClick={()=> setEdit(true)} placeholder={''} className="flex items-center gap-3" size="sm" >
                                 <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> ذخیره
                             </Button>
                         </div>
                 </CardHeader>
-                <TableEdite setEdite={setEdit} tableHeade={['تصویر',"نام" , "تعداد"  , "قیمت"]} tableRow={data?.data.data.products || []}/>
+                <TableEdite edit={edit} setEdite={setEdit} tableHeade={['تصویر',"نام" , "تعداد"  , "قیمت"]} tableRow={data?.data.data.products || []}/>
                 <CardFooter placeholder={''} className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Typography placeholder={''} variant="small" color="blue-gray" className="font-normal">
                         صفحه 1 از 10
                     </Typography>
                     <div className="flex gap-2">
-                        <Button placeholder={''} variant="outlined" size="sm">
+                        <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/inventory?page=${Number(page) -1  }&filter=${filter}`)}>
                             صفحه قبل
                         </Button>
-                        <Button placeholder={''} variant="outlined" size="sm">
+                        <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/inventory?page=${Number(page) + 1}&filter=${filter}`)}>
                             صفحه بعد
                         </Button>
                     </div>

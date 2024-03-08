@@ -1,14 +1,15 @@
 import {Avatar, Typography} from "@material-tailwind/react";
 
 import {Product} from "@/utils/types/global";
-import { useState} from "react";
+import {useEffect, useState} from "react";
+import {Update} from "@/core/service/http-service";
 
 interface Iedit {
-    _id : string,
+    _id? : string,
     price : string,
     quantity : string,
 }
-const TableRow = ({tableRow , setEdite} : {tableRow : Product[] ,  setEdite : (value : boolean)=> void }) =>{
+const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdite : (value : boolean)=> void , edit : boolean }) =>{
     const [product , setProduct] = useState<Iedit[]>([])
     const [priceEdit , setPriceEdit] = useState<string[]>([])
     const [quantityEdit , setQuantityEdit] = useState<string[]>([])
@@ -24,8 +25,11 @@ const TableRow = ({tableRow , setEdite} : {tableRow : Product[] ,  setEdite : (v
             setProduct([...product , productItem])
         }
         else {
-           let productItem =  {...findProduct , quantity : quantity}
-            setProduct([...product , productItem])
+            let productItem =  {...findProduct , quantity : quantity}
+            setProduct((prevState)=>{
+                const filter = prevState.filter(item => item._id !== id)
+                return [...filter , productItem]
+            })
         }
     }
     const handlePrice  = (id : string , quantity : number , price : string ) =>{
@@ -41,9 +45,23 @@ const TableRow = ({tableRow , setEdite} : {tableRow : Product[] ,  setEdite : (v
         }
         else {
             let productItem =  {...findProduct , price : price}
-            setProduct([...product , productItem])
+            setProduct((prevState)=>{
+                const filter = prevState.filter(item => item._id !== id)
+                return [...filter , productItem]
+        })
         }
     }
+    useEffect(() => {
+            console.log(product)
+        if (edit && product.length !== 0) {
+            const promise = product.map(item =>(
+                Update<Product , Iedit>(`/api/products/${item._id}` , {price : item.price , quantity : item.quantity})
+            ))
+            Promise.all(promise).then((result) =>{
+                console.log(result)
+            })
+        }
+    }, [edit]);
     return(
         <>
         {tableRow.map(

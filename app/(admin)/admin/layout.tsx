@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
 import "../../globals.css";
 import React, {ReactNode} from "react";
-import {ThemeProvider} from "../../../component/material/index";
+import {ThemeProvider} from "../../../component/material";
 import Sidebar from "@/app/(admin)/admin/component/sidebar";
 import Query from "@/component/query";
 import {theme} from "@/component/material/theme";
+import Provider from "@/component/provider";
 
 export const metadata: Metadata = {
     title: "Create Next App",
@@ -24,7 +25,7 @@ export default function RootLayout({children}: Readonly<{
                     <Sidebar/>
                 </div>
                 <Query>
-                {children}
+                        {children}
                 </Query>
             </div>
         </body>

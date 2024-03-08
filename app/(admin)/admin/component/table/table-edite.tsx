@@ -9,7 +9,7 @@ import {Product} from "@/utils/types/global";
 
 import TableRow from "@/app/(admin)/admin/component/table/table-row";
 
-export function TableEdite({tableHeade  , tableRow , setEdite} : {tableHeade : string[] ,tableRow : Product[] , setEdite : (value : boolean)=> void }) {
+export function TableEdite({tableHeade  , tableRow , setEdite , edit} : {tableHeade : string[] ,tableRow : Product[] , setEdite : (value : boolean)=> void , edit : boolean}) {
 
     return (
         <Card placeholder={''} className="w-full mt-10">
@@ -35,7 +35,7 @@ export function TableEdite({tableHeade  , tableRow , setEdite} : {tableHeade : s
                     </tr>
                     </thead>
                     <tbody>
-                    <TableRow setEdite={setEdite} tableRow={tableRow}/>
+                    <TableRow edit={edit} setEdite={setEdite} tableRow={tableRow}/>
                     </tbody>
                 </table>
             </CardBody>

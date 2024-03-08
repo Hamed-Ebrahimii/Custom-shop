@@ -31,7 +31,7 @@ const Login = () =>{
         <div className={'w-full h-screen flex flex-col gap-4 justify-center items-center bg-gray-custom'}>
             <h1 className={'text-2xl font-medium text-gray-600'} >خوش آمدی (:</h1>
             <div className={'bg-white rounded-xl p-3 w-8/12 flex items-center'}>
-            <div className={'w-1/2'}>
+            <div className={'w-full md:w-1/2'}>
                 <form onSubmit={handleSubmit(onSubmit)} className={'w-full flex flex-col justify-center items-center gap-10'}>
                     <p className={'text-lg font-medium text-gray-400'}>ورود</p>
                     <div className={'w-2/4'}>
@@ -61,7 +61,7 @@ const Login = () =>{
                     </div>
                 </form>
             </div>
-                <div className={'w-1/2 flex justify-center items-center bg-red-custom py-4 rounded-lg'}>
+                <div className={'w-1/2 hidden md:flex justify-center items-center bg-red-custom py-4 rounded-lg'}>
                     <Image src={'/img/login.png'} alt={''} width={500} height={500} className={'w-1/3'}/>
                 </div>
             </div>

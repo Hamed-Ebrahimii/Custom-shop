@@ -111,7 +111,7 @@ export function Sidebar() {
                     </ListItem>
                     <AccordionBody className="py-1">
                         <List placeholder={''} className="p-0">
-                            <ListItem placeholder={''} onClick={()=> router.push('inventory')}>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/inventory?page=1')}>
                                 <ListItemPrefix placeholder={''}>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>
@@ -123,7 +123,7 @@ export function Sidebar() {
                                 </ListItemPrefix>
                                 محصولات
                             </ListItem>
-                            <ListItem placeholder={''}>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/orders?page=1')}>
                                 <ListItemPrefix placeholder={''}>
                                     <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
                                 </ListItemPrefix>

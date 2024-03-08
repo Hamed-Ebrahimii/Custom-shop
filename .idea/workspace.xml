@@ -9,13 +9,27 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/api/editProduct.ts" afterDir="false" />
+    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="add table editable">
+      <change afterPath="$PROJECT_DIR$/api/getAllOrders.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/getProductById.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/getUserById.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/component/radio/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/provider/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/middleware.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/tools/editResponseOrder.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/login-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/login-admin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-edite.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-edite.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tools/getToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getToken.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/utils/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/validation/login-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validation/login-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,8 +42,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="TypeScript File" />
       </list>
     </option>
   </component>
@@ -101,11 +115,11 @@
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\html-js-maktab\final project next" />
       <recent name="D:\html-js-maktab\final project next\app\(authentication)" />
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
       <recent name="D:\html-js-maktab\final project next\app\(admin)" />
       <recent name="D:\html-js-maktab\final project next\public\img" />
-      <recent name="D:\html-js-maktab\final project next\app" />
     </key>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -136,7 +150,8 @@
       <workItem from="1709635903065" duration="11691000" />
       <workItem from="1709720240788" duration="145000" />
       <workItem from="1709720913808" duration="18378000" />
-      <workItem from="1709804547982" duration="3288000" />
+      <workItem from="1709804547982" duration="23996000" />
+      <workItem from="1709867480770" duration="9504000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -194,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709739902799</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add table editable">
+      <option name="closed" value="true" />
+      <created>1709807931746</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1709807931746</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -222,6 +245,7 @@
     <MESSAGE value="fix bog" />
     <MESSAGE value="add table admin page" />
     <MESSAGE value="add new Product" />
-    <option name="LAST_COMMIT_MESSAGE" value="add new Product" />
+    <MESSAGE value="add table editable" />
+    <option name="LAST_COMMIT_MESSAGE" value="add table editable" />
   </component>
 </project>
