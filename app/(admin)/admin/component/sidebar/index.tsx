@@ -129,6 +129,18 @@ export function Sidebar() {
                                 </ListItemPrefix>
                                 سفارشات
                             </ListItem>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/category')}>
+                                <ListItemPrefix placeholder={''}>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                دسته بندی
+                            </ListItem>
+                            <ListItem placeholder={''} onClick={()=> router.push('/admin/subcategory')}>
+                                <ListItemPrefix placeholder={''}>
+                                    <ChevronRightIcon strokeWidth={3} className="h-3 w-5" />
+                                </ListItemPrefix>
+                                زیر مجموعه دسته بندی
+                            </ListItem>
                         </List>
                     </AccordionBody>
                 </Accordion>

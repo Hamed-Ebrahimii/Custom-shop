@@ -157,3 +157,23 @@ interface ResponseSingleProduct {
         "__v": number
     }
 }
+interface ICategory {
+    "_id": string,
+    "name": string,
+    "icon": string,
+    "createdAt": string,
+    "updatedAt": string,
+    "slugname": string
+}
+interface SubCategoriesItem {
+    "_id": string,
+    "name": string,
+    "icon": string,
+    "createdAt": string,
+    "updatedAt": string,
+    "slugname": string,
+    "category": string,
+}
+interface ResponseCategory {
+    "category" : ICategory
+}

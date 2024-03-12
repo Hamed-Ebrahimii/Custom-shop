@@ -1,47 +1,30 @@
 "use client"
-import Table from "@/app/(admin)/admin/component/table/Table";
-import {Button, CardFooter, CardHeader, Input, Tab, Tabs, TabsHeader, Typography} from "@material-tailwind/react";
-import {UserPlusIcon} from "@heroicons/react/24/solid";
+import {Button, CardFooter, CardHeader, Input,Typography} from "@material-tailwind/react";
 import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import {useQuery} from "@tanstack/react-query";
 import { useRouter, useSearchParams} from "next/navigation";
-import {getAllProduct} from "@/api/getAllProduct";
+import { MdCategory } from "react-icons/md";
 import {useState} from "react";
 import Modal from "@/component/modal";
-import AddProduct from "@/app/(admin)/admin/product/component/addProduct";
 import Loading from "@/component/loading/loading";
+import { getAllCategories } from "@/api/getAllCategories";
+import TableCategory from "../component/table/tableCategory";
+import AddCategory from "./component/addCategory";
 
-const Product = () =>{
+const Category = () =>{
     const params = useSearchParams()
-    const page = params.get('page')
-    const filter = params.get('filter')
-
+    const page = params.get('page') || '1'
     const [openModal , setOpenModal] = useState(false)
     const {data , isLoading , refetch} = useQuery({
-        queryKey : [page , filter],
-        queryFn : () => getAllProduct(page! , filter!)
+        queryKey : [page],
+        queryFn : () => getAllCategories(page || undefined , '4')
     })
     const router = useRouter()
-    const TABS = [
-        {
-            label: "همه",
-            value: "all",
-        },
-        {
-            label: "جدیدترین",
-            value: "createdAt[gte]",
-        },
-        {
-            label: "قدیمی ترین",
-            value: "createdAt",
-        },
-    ];
-    
     return(
         <>
             {
                 openModal && <Modal isOpen={openModal}>
-                    <AddProduct setOpenModal={setOpenModal}/>
+                    <AddCategory refetch={refetch} setOpenModal={setOpenModal}/>
                 </Modal>
             }
         <div className={'w-full bg-white p-5'}>
@@ -49,29 +32,21 @@ const Product = () =>{
                 <div className="mb-8 flex items-center justify-between gap-8">
                     <div>
                         <Typography placeholder={''} variant="h5" color="blue-gray">
-                            لیست محصولات
+                            لیست دسته بندی
                         </Typography>
                         <Typography placeholder={''} color="gray" className="mt-1 font-normal">
-                            در این قسمت لیست تمامی محصولات سایت رو مشاهده میکنید
+                            در این قسمت لیست تمامی دسته بندی سایت رو مشاهده میکنید
                         </Typography>
                     </div>
                     <div className="flex shrink-0 flex-col gap-2 sm:flex-row">
 
                         <Button placeholder={''} className="flex items-center gap-3" size="sm" onClick={()=> setOpenModal(true)}>
-                            <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> اضافه کردن محصول
+                        <MdCategory /> اضافه کردن دسته بندی
                         </Button>
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-                    <Tabs value="all" className="w-full md:w-max">
-                        <TabsHeader placeholder={''}>
-                            {TABS.map(({ label, value }) => (
-                                <Tab onClick={()=> router.push(`/admin/product?page=${data?.data.page}&filter=${value}`)} className={'whitespace-nowrap'} placeholder={''} key={value} value={value}>
-                                    &nbsp;&nbsp;{label}&nbsp;&nbsp;
-                                </Tab>
-                            ))}
-                        </TabsHeader>
-                    </Tabs>
+                   
                     <div className="w-full md:w-72 relative flex">
                         <Input
                             crossOrigin={''}
@@ -85,17 +60,17 @@ const Product = () =>{
                 </div>
             </CardHeader>
             {
-                isLoading ? <Loading/> : <Table refetch={refetch} tableHeade={['تصویر',"نام" , "برند" , "تعداد" , "دسته بندی" , "زیر دسته بندی" , "قیمت" , ""]} tableRow={data?.data.data.products || []}/>
+                isLoading ? <Loading/> : <TableCategory tableHeade={[ "ایکن", "نام",""]} tableRow={data?.data.data.categories || []}/>
             }
             <CardFooter placeholder={''} className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                 <Typography placeholder={''} variant="small" color="blue-gray" className="font-normal">
                     صفحه {data?.data.page} از {data?.data.total_pages}
                 </Typography>
                 <div className="flex gap-2">
-                    <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/product?page=${Number(page) -1  }&filter=${filter}`)}>
+                    <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/category?page=${Number(page) -1  }`)}>
                         صفحه قبل
                     </Button>
-                    <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/product?page=${Number(page) + 1}&filter=${filter}`)}>
+                    <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/category?page=${Number(page) + 1}`)}>
                         صفحه بعد
                     </Button>
                 </div>
@@ -104,4 +79,4 @@ const Product = () =>{
         </>
     )
 }
-export default Product
+export default Category

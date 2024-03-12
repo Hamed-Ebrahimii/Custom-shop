@@ -7,6 +7,7 @@ import {UserPlusIcon} from "@heroicons/react/24/solid";
 import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import TableEdite from "@/app/(admin)/admin/component/table/table-edite";
 import {useState} from "react";
+import Loading from "@/component/loading/loading";
 const Inventory = () =>{
 
 
@@ -14,7 +15,7 @@ const Inventory = () =>{
     const page = params.get('page')
     const filter = params.get('filter')
     const [edit , setEdit] = useState(true)
-    const {data} = useQuery({
+    const {data , isLoading} = useQuery({
         queryKey : [page],
         queryFn : () => getAllProduct(page! )
     })
@@ -75,10 +76,10 @@ const Inventory = () =>{
                             </Button>
                         </div>
                 </CardHeader>
-                <TableEdite edit={edit} setEdite={setEdit} tableHeade={['تصویر',"نام" , "تعداد"  , "قیمت"]} tableRow={data?.data.data.products || []}/>
+               {isLoading ? <Loading/> : <TableEdite edit={edit} setEdite={setEdit} tableHeade={['تصویر',"نام" , "تعداد"  , "قیمت"]} tableRow={data?.data.data.products || []}/> }
                 <CardFooter placeholder={''} className="flex items-center justify-between border-t border-blue-gray-50 p-4">
                     <Typography placeholder={''} variant="small" color="blue-gray" className="font-normal">
-                        صفحه 1 از 10
+                        صفحه {data?.data.page == 0 ? 1 : data?.data.page} از {data?.data.total_pages}
                     </Typography>
                     <div className="flex gap-2">
                         <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/inventory?page=${Number(page) -1  }&filter=${filter}`)}>

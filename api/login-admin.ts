@@ -6,5 +6,6 @@ import {cookies} from "next/headers";
 export const loginAdmin = async (data : loginValidationType ) =>{
     const response =  await Create<ILogin , loginValidationType>('/api/auth/login' , data)
     cookies().set(  {name : 'token', value : response.data.token.accessToken})
+    cookies().set(  {name : 'refreshToken', value : response.data.token.refreshToken})
     return response
 }

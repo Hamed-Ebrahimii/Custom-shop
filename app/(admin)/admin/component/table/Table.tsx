@@ -10,13 +10,18 @@ import {
     IconButton,
     Tooltip,
 } from "@material-tailwind/react";
-import {Product} from "@/utils/types/global";
+import {EditProduct, Product} from "@/utils/types/global";
 import {useQuery} from "@tanstack/react-query";
 import {getAllCategories} from "@/api/getAllCategories";
 import {getAllSubcategories} from "@/api/getAllSubcategories";
 import {TrashIcon} from "@heroicons/react/16/solid";
+import { useState } from "react";
+import Modal from "@/component/modal";
+import EditProductModal from "../../product/component/editProduct";
 
-export function Table({tableHeade  , tableRow} : {tableHeade : string[] ,tableRow : Product[] }) {
+
+
+export function Table({tableHeade  , tableRow , refetch} : {tableHeade : string[] ,tableRow : Product[] , refetch : ()=> void }) {
     const {data} = useQuery({
         queryKey : ['category'],
         queryFn : () => getAllCategories()
@@ -25,10 +30,35 @@ export function Table({tableHeade  , tableRow} : {tableHeade : string[] ,tableRo
         queryKey : ['subcategory'],
         queryFn : () => getAllSubcategories()
     })
-    return (
-        <Card placeholder={''} className="w-full mt-10">
+    const [editMode , setEditMode] = useState(false)
+    const [id , setId] = useState('')
+    const [product , setProduct] = useState<EditProduct>()
+    const handleProduct = (product : Product) =>{
+        
+            setProduct((preveState)=>{
+                const productObj : EditProduct = {
+                    brand : product.brand,
+                    category : product.category,
+                    description : product.description,
+                    price : product.price,
+                    name : product.name,
+                    quantity : product.quantity,
+                    
 
-            <CardBody placeholder={''} className="overflow-scroll px-0">
+                }
+                setId(product._id)
+                return productObj
+            })
+            setEditMode(true)
+    }
+    return (
+        <>      
+        {editMode && <Modal isOpen={editMode}>
+                    <EditProductModal refetch={refetch} setOpenModal={setEditMode}  id={id} product={product!} />
+                </Modal>
+        }
+          <Card placeholder={''} className="w-full mt-10">
+            <CardBody placeholder={''} className="overflow-auto px-0">
                 <table className="mt-4 w-full min-w-max table-auto text-left">
                     <thead>
                     <tr>
@@ -51,7 +81,7 @@ export function Table({tableHeade  , tableRow} : {tableHeade : string[] ,tableRo
                     </thead>
                     <tbody>
                     {tableRow.map(
-                        ({name , subcategory , category , brand , thumbnail , price , quantity  }, index) => {
+                        ({name , subcategory , category , brand , thumbnail , price , quantity  , description , _id , images , slugname }, index) => {
                             const isLast = index === tableRow.length - 1;
                             const classes = isLast
                                 ? "p-4"
@@ -132,7 +162,7 @@ export function Table({tableHeade  , tableRow} : {tableHeade : string[] ,tableRo
                                     </td>
                                     <td className={classes}>
                                         <Tooltip content="ویرایش محصول">
-                                            <IconButton placeholder={''} variant="text">
+                                            <IconButton onClick={()=>handleProduct({name , brand , category , description , price , quantity , _id , images , slugname , subcategory , thumbnail})} placeholder={''} variant="text">
                                                 <PencilIcon className="h-4 w-4" />
                                             </IconButton>
                                         </Tooltip>
@@ -151,6 +181,8 @@ export function Table({tableHeade  , tableRow} : {tableHeade : string[] ,tableRo
             </CardBody>
 
         </Card>
+        </>
+
     );
 }
 export default Table

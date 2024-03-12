@@ -13,7 +13,7 @@ export function TableEdite({tableHeade  , tableRow , setEdite , edit} : {tableHe
 
     return (
         <Card placeholder={''} className="w-full mt-10">
-            <CardBody placeholder={''} className="overflow-scroll px-0">
+            <CardBody placeholder={''} className="overflow-auto px-0">
                 <table className="mt-4 w-full table-auto text-right">
                     <thead>
                     <tr>

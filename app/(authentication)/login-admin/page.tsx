@@ -7,7 +7,6 @@ import {loginValidation, loginValidationType} from "@/utils/validation/login-val
 import {useMutation} from "@tanstack/react-query";
 import {loginAdmin} from "@/api/login-admin";
 import {useRouter} from "next/navigation";
-import {useEffect} from "react";
 const Login = () =>{
     const router = useRouter()
     const {control  , reset , handleSubmit , formState : {errors}} = useForm<loginValidationType>({
@@ -16,17 +15,16 @@ const Login = () =>{
     })
     const { status , isPending , mutate  } = useMutation({
         mutationKey : ['loginValidation'],
-        mutationFn : (data : loginValidationType) => loginAdmin(data)
+        mutationFn : (data : loginValidationType) => loginAdmin(data),
+        onSuccess : () =>{
+            router.push('/admin')
+        }
     })
     const onSubmit = async (data : loginValidationType) =>{
 
           mutate(data)
     }
-    useEffect(() => {
-        if (status === "success"){
-           router.push('/admin')
-        }
-    }, [status]);
+  
     return(
         <div className={'w-full h-screen flex flex-col gap-4 justify-center items-center bg-gray-custom'}>
             <h1 className={'text-2xl font-medium text-gray-600'} >خوش آمدی (:</h1>

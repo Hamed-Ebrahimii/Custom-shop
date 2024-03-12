@@ -65,7 +65,7 @@ export const theme = {
                     color: "text-blue-gray-700",
                     fontFamily: "font-sans",
                     fontWeight: "font-normal",
-                    textAlign: "text-left",
+                    textAlign: "text-right",
                     outline: "outline outline-0 focus:outline-0",
                     disabled: "disabled:bg-blue-gray-50 disabled:border-0",
                     transition: "transition-all",

@@ -2,21 +2,30 @@ import {Controller, useForm} from "react-hook-form";
 import {IoMdCloseCircleOutline} from "react-icons/io";
 import {Button, Input, Option, Select, Textarea} from "@material-tailwind/react";
 import {zodResolver} from "@hookform/resolvers/zod";
-import {productValidation, ProductValidationType} from "@/utils/validation/product-validation";
 import {useMutation, useQuery} from "@tanstack/react-query";
 import {getAllCategories} from "@/api/getAllCategories";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import {getSubcategoryByCategoryID} from "@/core/action/getSubcategoryByCategoryID";
-import {addProduct} from "@/api/addProduct";
-import { EditProduct, Product } from "@/utils/types/global";
+import { EditProductValidation, EditProductValidationType } from "@/utils/validation/edit-product-validation";
 import { editProduct } from "@/api/editProduct";
+import { EditProduct } from "@/utils/types/global";
+import { useEffect } from "react";
 
-const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }) =>{
+const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModal : (data : boolean) => void , product : EditProduct , id : string  , refetch : ()=> void}) =>{
     const [disable , setDisable] = useState(true)
     const [idCategory , setIdCategory] = useState('')
-    const {control  , handleSubmit , formState : {errors}} = useForm<ProductValidationType>({
+    const {control  , handleSubmit , formState : {errors}} = useForm<EditProductValidationType>({
         mode : "onBlur",
-        resolver : zodResolver(productValidation),
+        resolver : zodResolver(EditProductValidation),
+        defaultValues : {
+            name: product.name,
+            category: product.category,
+            brand: product.brand,
+            subcategory: product.subcategory,
+            price: String(product.price),
+            quantity: String(product.quantity),
+            description: product.description,
+        }
     
     })
     const {data : category} = useQuery({
@@ -29,35 +38,40 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
     })
     const {isPending  , mutate} = useMutation({
         mutationKey : ['product'] ,
-        mutationFn : (data : FormData  ) => addProduct(data),
+        mutationFn : (data : FormData  ) => editProduct(data , id),
         onSuccess : () =>{
+            refetch()
             setOpenModal(false)
         }
     })
-    const onSubmit = async (data : ProductValidationType) =>{ 
+    const onSubmit = async (data : EditProductValidationType) =>{ 
         const formData = new FormData()
-        formData.append("name"  , data.name)
-        formData.append("brand"  , data.brand)
-        formData.append("description"  , data.description)
-        formData.append("category"  , data.category)
-        formData.append("subcategory" ,data.subcategory)
-        formData.append("thumbnail" , data.thumbnail , data.thumbnail.name)
-        formData.append("price" , data.price)
-        formData.append("quantity" , data.quantity)
-        data.images.forEach(item =>{
+       data.name && formData.append("name"  , data.name)
+       data.brand && formData.append("brand"  , data.brand)
+       data.description && formData.append("description"  , data.description)
+       data.category && formData.append("category"  , data.category)
+       data.subcategory && formData.append("subcategory" ,data.subcategory)
+       data.thumbnail && formData.append("thumbnail" , data.thumbnail , data.thumbnail.name)
+       data.price && formData.append("price" , data.price)
+       data.quantity &&  formData.append("quantity" , data.quantity)
+       data.images && data.images.forEach(item =>{
             formData.append("images" , item  , item.name)
         })
         
        mutate(formData)
     }
-    
+    useEffect(()=>{
+        console.log(errors
+            );
+        
+    } , [errors])
     return(
         <div className={'w-6/12 py-4 px-6 bg-white rounded-lg'}>
             <button onClick={()=> setOpenModal(false)}>
                 <IoMdCloseCircleOutline className={'size-5'}/>
             </button>
             <p className={'text-xl font-bold text-gray-800 text-center'}>
-                اضافه کردن محصول
+                ویرایش کردن محصول
             </p>
             {errors.root?.message && <p className="text-lg text-red-500">{errors.root?.message}</p>}
             <form onSubmit={handleSubmit(onSubmit)} className={'w-full  items-end space-y-8 mt-6 '}>
@@ -139,7 +153,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                 <div className={'w-full grid grid-cols-2 grid-rows-1 gap-4 '}>
                     <div className={'w-full'}>
                        <Controller render={({field})=>(
-                           <Select onChange={(e => {
+                           <Select defaultValue={product.category} onChange={(e => {
                                console.log(e)
                                setIdCategory(e || '')
                                setDisable(false)
@@ -154,7 +168,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                     </div>
                     <div className={'w-full'}>
                        <Controller render={({field})=>(
-                           <Select {...field} disabled={disable || isLoading}  placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
+                           <Select defaultValue={product.subcategory} {...field} disabled={disable || isLoading}  placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
                                {
                                  subCategory ?  subCategory?.map(item => <Option value={item._id} key={item._id}>{item.name}</Option>) : <Option>لطفا صبر کنید</Option>
                                }
@@ -168,9 +182,9 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                     )} name={'description'}/>
 
                 </div>
-                <Button loading={isPending} placeholder={''} type={'submit'} size="sm">اضافه کردن</Button>
+                <Button loading={isPending} placeholder={''} type={'submit'} size="sm">ویرایش کردن</Button>
             </form>
         </div>
     )
 }
-export default AddProduct
+export default EditProductModal

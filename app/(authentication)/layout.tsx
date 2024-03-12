@@ -14,12 +14,8 @@ export default function RootLayout({children}: Readonly<{
 
 }>) {
     return (
-        <html lang="fa" dir={'rtl'}>
-        <ThemeProvider>
-        <body className={'font-yekan'}>
+        <>
         {children}
-        </body>
-        </ThemeProvider>
-        </html>
+        </>
     );
 }

@@ -47,7 +47,7 @@ export  function Table({tableHeade  , tableRow } : {tableHeade : string[] ,table
 
     return (
         <Card placeholder={''} className="w-full mt-10">
-            <CardBody placeholder={''} className="overflow-scroll px-0">
+            <CardBody placeholder={''} className="overflow-auto px-0">
                 <table className="mt-4 w-full min-w-max table-auto text-left">
                     <thead>
                     <tr>
@@ -69,7 +69,7 @@ export  function Table({tableHeade  , tableRow } : {tableHeade : string[] ,table
                     </tr>
                     </thead>
                     <tbody>
-                    {tableRow.orders.map(({user , products , deliveryStatus} , index) => {
+                    {tableRow?.orders?.map(({user , products , deliveryStatus} , index) => {
                             const isLast = index === tableRow.orders.length - 1;
                             const classes = isLast
                                 ? "p-4"

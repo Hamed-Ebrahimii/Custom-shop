@@ -1,5 +1,6 @@
 import axios, {AxiosRequestConfig, AxiosResponse} from "axios";
 import {getToken} from "@/utils/tools/getToken";
+import { refreshToken } from "@/utils/tools/refreshToken";
 
 const httpService = axios.create({
     baseURL : 'http://localhost:8000',
@@ -10,10 +11,11 @@ const baseApi = async <T> (url : string , option : AxiosRequestConfig) : Promise
 }
 
 export const Create = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
+    const token = await getToken()
     return await baseApi(url, {
         method : 'POST',
         headers : {
-            Authorization : 'Bearer ' + getToken()
+            Authorization : 'Bearer ' + token
         },
         data
     })
@@ -21,6 +23,7 @@ export const Create = async <T , dataType> (url : string , data : dataType) : Pr
 
 
 export const Update = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
+    await refreshToken()
     return await baseApi(url, {
         method : 'PATCH',
         headers : {
@@ -30,6 +33,7 @@ export const Update = async <T , dataType> (url : string , data : dataType) : Pr
     })
 }
 export const Delete = async (url : string ) : Promise<AxiosResponse> =>{
+    await refreshToken()
     return await baseApi(url, {
         method : 'DELETE',
         headers : {
