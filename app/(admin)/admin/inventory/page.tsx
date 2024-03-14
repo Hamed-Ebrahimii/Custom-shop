@@ -8,9 +8,7 @@ import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import TableEdite from "@/app/(admin)/admin/component/table/table-edite";
 import {useState} from "react";
 import Loading from "@/component/loading/loading";
-const Inventory = () =>{
-
-
+const Inventory = () =>{ 
     const params = useSearchParams()
     const page = params.get('page')
     const filter = params.get('filter')

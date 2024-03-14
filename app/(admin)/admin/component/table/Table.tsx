@@ -18,6 +18,7 @@ import {TrashIcon} from "@heroicons/react/16/solid";
 import { useState } from "react";
 import Modal from "@/component/modal";
 import EditProductModal from "../../product/component/editProduct";
+import DeleteProduct from "../../product/component/deleteProduct";
 
 
 
@@ -30,8 +31,10 @@ export function Table({tableHeade  , tableRow , refetch} : {tableHeade : string[
         queryKey : ['subcategory'],
         queryFn : () => getAllSubcategories()
     })
+    const [deleteMode , setDelete] = useState(false)
     const [editMode , setEditMode] = useState(false)
     const [id , setId] = useState('')
+    const [name , setName] = useState('')
     const [product , setProduct] = useState<EditProduct>()
     const handleProduct = (product : Product) =>{
         
@@ -56,6 +59,11 @@ export function Table({tableHeade  , tableRow , refetch} : {tableHeade : string[
         {editMode && <Modal isOpen={editMode}>
                     <EditProductModal refetch={refetch} setOpenModal={setEditMode}  id={id} product={product!} />
                 </Modal>
+        }
+        {
+            deleteMode && <Modal isOpen={deleteMode}>
+                <DeleteProduct setOpenModal={setDelete} id={id} name={name} refetch={refetch}/>
+            </Modal>
         }
           <Card placeholder={''} className="w-full mt-10">
             <CardBody placeholder={''} className="overflow-auto px-0">
@@ -167,7 +175,11 @@ export function Table({tableHeade  , tableRow , refetch} : {tableHeade : string[
                                             </IconButton>
                                         </Tooltip>
                                         <Tooltip content="حذف محصول">
-                                            <IconButton placeholder={''} variant="text">
+                                            <IconButton placeholder={''} variant="text" onClick={()=>{
+                                                setId(_id)
+                                                setName(name)
+                                                setDelete(true)
+                                            }}>
                                                 <TrashIcon className="h-4 w-4" />
                                             </IconButton>
                                         </Tooltip>

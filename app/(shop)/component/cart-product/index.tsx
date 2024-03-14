@@ -1,21 +1,22 @@
+import { Product } from "@/utils/types/global";
 import Image from "next/image";
 import {VscHeart} from "react-icons/vsc";
 
-const CartProduct = () =>{
+const CartProduct = ({product} : {product : Product}) =>{
     return(
-        <div className={'w-full p-4 rounded-lg border flex flex-col'}>
-                <figure className={'relative w-full h-[300px]'}>
+        <div className={'w-full p-4 rounded-lg border flex flex-col h-80 justify-between'}>
+                <figure className={'relative w-24 h-24 md:w-full md:h-[300px] mx-auto'}>
 
-                <Image   src={'/img/img.png'} alt={''} fill={true} className={'object-cover rounded-lg self-center md:w-full'} />
+                <Image   src={'http://127.0.0.1:8000/images/products/images/'+product.images[0]} alt={''} fill={true} className={'object-cover rounded-lg self-center md:w-full'} />
                 </figure>
 
             <div className={'w-full mt-4 flex items-center justify-between'}>
-                <p className={'text-lg font-bold'}>تیشرت زنانه</p>
+                <p className={'text-sm md:text-lg font-bold w-8/12 overflow-hidden text-ellipsis'}>{product.name}</p>
                 <VscHeart className={'size-6'} />
             </div>
             <p className={'mt-2 font-normal'}>دارای رنگ بندی، قابل طراحی</p>
             <div className={'w-full flex justify-end mt-7'}>
-                <p className={'text-lg font-bold'}>تومان ۱۵۰,۰۰۰</p>
+                <p className={'text-lg font-bold'}>تومان {product.price}</p>
             </div>
         </div>
     )

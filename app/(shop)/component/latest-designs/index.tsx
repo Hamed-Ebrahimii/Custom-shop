@@ -2,8 +2,15 @@ import Link from "next/link";
 import Image from "next/image";
 import CartProduct from "@/app/(shop)/component/cart-product";
 import Pocket from "@/app/(shop)/component/top-designers/icon/pocket";
+import { getAllProduct } from "@/api/getAllProduct";
 
-const LatestDesigns = () =>{
+const LatestDesigns = async () =>{
+    let listProduct
+    try{
+            listProduct = await getAllProduct('1' , '', '8')
+    }catch(e){
+
+    }
     return(
         <div className={'w-full mt-6 mb-16'}>
             <div className={'w-full flex items-center justify-between'}>
@@ -20,13 +27,9 @@ const LatestDesigns = () =>{
                     </p>
                     <Pocket/>
                 </div>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
-                <CartProduct/>
+               {
+                listProduct?.data.data.products.map(item => <CartProduct key={item._id} product={item}/>)
+               }
             </div>
         </div>
     )

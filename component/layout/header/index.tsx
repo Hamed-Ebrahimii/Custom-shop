@@ -9,7 +9,7 @@ const Header = () => {
     return(
         <div className={'font-yekan'}>
             <div className={'w-full flex justify-center items-center py-2 bg-red-custom'}>
-                <p className={'font-yekan text-lg text-white'}>
+                <p className={'font-yekan text-sm md:text-lg text-white'}>
                     با عضویت در کاستومی، اولین سفارش خود را ” رایگان” تحویل بگیرید
                 </p>
             </div>

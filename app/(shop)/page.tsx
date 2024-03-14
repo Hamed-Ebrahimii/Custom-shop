@@ -10,7 +10,7 @@ import Banner from "@/app/(shop)/component/banner";
 
 const Home = ()=>{
     return(
-        <div className={'px-28'}>
+        <div className={'px-4 md:px-28'}>
             <Hero/>
             <Categorization/>
             <BestSellers/>
