@@ -15,6 +15,9 @@ const TextEditor = ({onChange , description} : {onChange : (value : string)=> vo
          contentEditor = EditorState.createWithContent(contentState) 
        }
     }
+    else{
+        contentEditor = EditorState.createEmpty()
+    }
     const handleChange = (data : Draft.DraftModel.Encoding.RawDraftContentState) =>{
             const html = draftToHtml(data)
             onChange(html)
@@ -22,7 +25,7 @@ const TextEditor = ({onChange , description} : {onChange : (value : string)=> vo
     return( 
     <div dir='lrt'>
 
-     <Editor editorState={contentEditor} onContentStateChange={handleChange}/>
+     <Editor defaultEditorState={contentEditor}  onContentStateChange={handleChange}/>
      </div>
     )
 }

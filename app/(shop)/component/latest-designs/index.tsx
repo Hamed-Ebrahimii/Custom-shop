@@ -25,7 +25,7 @@ const LatestDesigns = async () =>{
                     <p className={'font-medium flex-1 md:text-3xl md:font-bold md:text-gray-800 md:mt-5'}>
                         محصولاتی که طراحی شده رو ببینید و در صورت نیاز طرحشون رو مطابق سلیقه خودتون تغییر بدید
                     </p>
-                    <Pocket/>
+                    <Pocket className="w-1/2 md:w-full"/>
                 </div>
                {
                 listProduct?.data.data.products.map(item => <CartProduct key={item._id} product={item}/>)

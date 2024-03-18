@@ -32,7 +32,7 @@ const Login = () =>{
             <div className={'w-full md:w-1/2'}>
                 <form onSubmit={handleSubmit(onSubmit)} className={'w-full flex flex-col justify-center items-center gap-10'}>
                     <p className={'text-lg font-medium text-gray-400'}>ورود</p>
-                    <div className={'w-2/4'}>
+                    <div className={'w-full md:w-2/4'}>
                         <Controller
                             control={control}
                             render={({  field})=> (
@@ -43,7 +43,7 @@ const Login = () =>{
                             name={'username'}/>
                         { errors.username && <p className={'text-red-400 text-xs '}>{errors.username.message}</p>}
                     </div>
-                    <div className={'w-2/4'}>
+                    <div className={'w-full md:w-2/4'}>
                         <Controller
                             control={control}
                             render={({  field})=> (

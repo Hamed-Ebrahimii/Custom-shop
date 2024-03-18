@@ -69,10 +69,10 @@ const Subcategory = () =>{
                     صفحه {data?.data.page} از {data?.data.total_pages}
                 </Typography>
                 <div className="flex gap-2">
-                    <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/category?page=${Number(page) -1  }`)}>
+                    <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/subcategory?page=${Number(page) -1  }`)}>
                         صفحه قبل
                     </Button>
-                    <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/category?page=${Number(page) + 1}`)}>
+                    <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/subcategory?page=${Number(page) + 1}`)}>
                         صفحه بعد
                     </Button>
                 </div>

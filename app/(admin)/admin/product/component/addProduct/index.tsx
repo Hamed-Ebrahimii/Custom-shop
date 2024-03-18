@@ -49,12 +49,11 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
         data.images.forEach(item =>{
             formData.append("images" , item  , item.name)
         })
-        
        mutate(formData)
     }
     
     return(
-        <div className={'w-6/12 py-4 px-6 bg-white rounded-lg'}>
+        <div className={'w-full md:w-6/12 py-4 px-6 bg-white rounded-lg'}>
             <button onClick={()=> setOpenModal(false)}>
                 <IoMdCloseCircleOutline className={'size-5'}/>
             </button>
@@ -67,7 +66,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
             separator={
             <ArrowLongRightIcon className="h-4 w-4 text-white" strokeWidth={2.5} />
                 }
-            className="rounded-full border mx-auto mt-4 mb-3 border-white bg-gradient-to-tr from-gray-900 to-gray-800 p-1"
+            className="w-full rounded-full border mx-auto mt-4 mb-3 border-white bg-gradient-to-tr from-gray-900 to-gray-800 p-1 hidden md:flex"
         >
        <button
       onClick={()=> setLevel(3)}
@@ -91,7 +90,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
             </div>
             <form onSubmit={handleSubmit(onSubmit)} className={'w-full  items-end space-y-8 mt-6 '}>
                 {
-                    level ===1 && <div className={'w-full grid grid-rows-2 grid-cols-2 gap-3'}>
+                    level ===1 && <div className={'w-full grid grid-cols-1 grid-rows-4 md:grid-rows-2 md:grid-cols-2 gap-3'}>
                     <div className={'w-full'}>
                        <Controller  control={control} render={({field})=>(
                            <Input {...field} crossOrigin={''} color={'blue-gray'} variant="standard" label="نام محصول"
@@ -126,7 +125,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                 }
                 {
                     level ===2 && <>
-                        <div className={'w-full grid grid-cols-2 grid-rows-1 gap-4'}>
+                        <div className={'w-full grid grid-cols-1 grid-rows-2 md:grid-rows-2 md:grid-cols-2 gap-4'}>
                     <div className="mb-3 w-full">
                         <label
                             htmlFor="formFileSm"
@@ -169,7 +168,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                         {errors.images?.message && <p className="text-sm text-red-500">*{errors.images.message}</p>}
                     </div>
                 </div>
-                <div className={'w-full grid grid-cols-2 grid-rows-1 gap-4 '}>
+                <div className={'w-full grid grid-cols-1 grid-rows-2 md:grid-cols-2 md:grid-rows-1 gap-4 '}>
                     <div className={'w-full'}>
                        <Controller render={({field})=>(
                            <Select onChange={(e => {
@@ -207,7 +206,7 @@ const AddProduct = ({setOpenModal} : {setOpenModal : (data : boolean) => void  }
                     {errors.description?.message && <p className="text-sm text-red-500">*{errors.description.message}</p>}
                 </div>
                 }
-                <Button onClick={()=> level < 3 && setLevel(level + 1)} loading={isPending} placeholder={''} type={level === 3 ? 'submit' : 'button'} size="sm">{level === 3 ? 'اضافه کردن' : 'بعدی'}</Button>
+                <Button onClick={()=> level < 3 && setLevel(level + 1)} loading={isPending} placeholder={''} type={level <= 2 ? 'button' : 'submit'} size="sm">{level === 3 ? 'اضافه کردن' : 'بعدی'}</Button>
             </form>
         </div>
     )

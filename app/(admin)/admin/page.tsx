@@ -13,7 +13,7 @@ const admin = () => {
                 <p className={'text-xl text-red-custom font-medium'}>
                     آمار سایت
                 </p>
-                <div className={'w-full flex justify-around'}>
+                <div className={'w-full items-center flex flex-col justify-around md:flex-row gap-3'}>
                     <Box icon={<FaUserGroup className={'text-white'}/>} title={"تعداد کاربران"} value={'1K'} progressValue={20}/>
                     <Box icon={<FaEuroSign className={'text-white'} />} title={"میزان فروش"} value={'1K'} progressValue={20}/>
                     <Box icon={<LuBox className={'text-white'}/>} title={"تعداد محصولات"} value={'1K'} progressValue={20}/>

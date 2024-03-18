@@ -1,8 +1,8 @@
 import {z} from "zod";
 
 export const productValidation = z.object({
-    "name" : z.string().min(1 , 'نام محصول نمیتواند خالی باشد ' ) ,
-    "category" : z.string().min(1 , 'لطفا دسته بندی محصول را انتخاب کنید') ,
+    "name" : z.string({required_error : 'نام محصول نمیتواند خالی باشد '}).min(4 , 'نام محصول حداقل باید 4 حرف باشد ' ) ,
+    "category" : z.string({required_error : 'لطفا دسته بندی محصول را انتخاب کنید'}).min(1 , 'لطفا دسته بندی محصول را انتخاب کنید') ,
     "brand" : z.string().min(1 , 'محصولت برند نداره؟ فکر کنم یادت رفته'),
     "subcategory" : z.string().min(1 , 'لطفا زیر مجموعه دسته بندی را انتخاب کنید'),
     "price" : z.string().min(1 , 'قیمت که نمیتواند صفر باشد میخواین محصول رو مجانی بدین؟'),
