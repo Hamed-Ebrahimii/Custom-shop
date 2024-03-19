@@ -222,7 +222,10 @@ const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModa
                 {errors.description?.message && <p className="text-sm text-red-500">*{errors.description.message}</p>}
             </div>
             }
-            <Button onClick={()=> level < 3 && setLevel(level + 1)} loading={isPending} placeholder={''} type={level <= 3 ? 'button' : 'submit'} size="sm">{level === 3 ? 'اضافه کردن' : 'بعدی'}</Button>
+             <div className="w-full flex items-center justify-between">
+             <Button  loading={isPending} placeholder={''} type={'submit'} disabled={level < 3}  size="sm">{'ویرایش کردن'}</Button>
+             <Button disabled={level ===3} placeholder={''} type={'button' } onClick={()=> level < 3 && setLevel(level + 1)} size="sm">{'بعدی'}</Button>
+             </div>
         </form>
     </div>
     )
