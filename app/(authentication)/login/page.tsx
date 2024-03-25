@@ -1,4 +1,4 @@
-const CustomDesign = () =>{
+const  CustomDesign = async () =>{
     return(
         <div>
             login

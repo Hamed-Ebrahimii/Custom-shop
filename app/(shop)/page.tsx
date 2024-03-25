@@ -7,10 +7,12 @@ import SpecialSale from "@/app/(shop)/component/special-sale";
 import TopDesigners from "@/app/(shop)/component/top-designers";
 import Categorization from "@/component/categorization";
 import Banner from "@/app/(shop)/component/banner";
+import Navigation from "@/component/nav";
 
 const Home = ()=>{
     return(
         <div className={'px-4 md:px-28'}>
+            <Navigation/>
             <Hero/>
             <Categorization/>
             <BestSellers/>

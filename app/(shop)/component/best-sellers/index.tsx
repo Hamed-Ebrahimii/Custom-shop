@@ -7,7 +7,7 @@ import { Product, ResponseApi } from "@/utils/types/global";
 const BestSellers = async () =>{
     let listProduct  
     try{
-            listProduct = await getAllProduct('1',"8")
+            listProduct = await getAllProduct('1',"" , '8')
 
     }catch(e){
 

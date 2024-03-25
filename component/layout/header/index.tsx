@@ -1,11 +1,23 @@
+"use client"
 import Logo from "@/component/layout/header/icon/logo";
 import Search from "@/component/layout/header/icon/search";
 import Login from "@/component/layout/header/icon/login";
 import Cart from "@/component/layout/header/icon/cart";
 import LogoMobile from "@/component/layout/header/icon/logo-mobile";
 import {CiMenuBurger} from "react-icons/ci";
+import { useRouter } from "next/navigation";
+import { useQuery } from "@tanstack/react-query";
+import { getAllCategories } from "@/api/getAllCategories";
+import { useState } from "react";
+import NavMobile from "./component/navMobile";
 
 const Header = () => {
+    const router = useRouter()
+    const {data} = useQuery({
+        queryKey : ['categoris'],
+        queryFn : () => getAllCategories()
+    })
+    const [navMobile , setNaveMobile] = useState(false)
     return(
         <div className={'font-yekan'}>
             <div className={'w-full flex justify-center items-center py-2 bg-red-custom'}>
@@ -15,8 +27,8 @@ const Header = () => {
             </div>
             <header className={'w-full flex items-center justify-around py-6 border-b border-gray-200'}>
                 <div className={'container mx-auto flex justify-around items-center'}>
-                    <Logo className={'hidden md:block'}/>
-                    <button className={'md:hidden'}>
+                    <Logo onClick={()=> router.push('/')} className={'hidden md:block cursor-pointer'}/>
+                    <button className={'md:hidden'} onClick={()=> setNaveMobile(true)}>
                         <CiMenuBurger className={'text-lg'}/>
                     </button>
                     <form className={'w-3/4 md:w-4/12 border rounded-xl overflow-hidden px-6 flex items-center justify-between py-1'}>
@@ -38,6 +50,9 @@ const Header = () => {
                     <LogoMobile className={'md:hidden'}/>
                 </div>
             </header>
+            {
+                navMobile && <NavMobile setNaveMobile={setNaveMobile} category={data?.data.data || {categories : []}}/>
+            }
         </div>
     )
 }
