@@ -10,7 +10,7 @@ import { getSubcategoryByCategoryID } from "@/core/action/getSubcategoryByCatego
 import { addProduct } from "@/api/addProduct";
 import TextEditor from "./component/textEditor";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
-import { cookies } from "next/headers";
+import {getItemCookie} from "@/utils/tools/getItemCookie";
 
 
 const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void }) => {
@@ -38,7 +38,7 @@ const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void })
         }
     })
     const onSubmit = async (data: ProductValidationType) => {
-        const userId = cookies().get('userId')
+        const userId = getItemCookie('userId')
         const formData = new FormData()
         formData.append("name", data.name)
         formData.append("brand", data.brand)
@@ -51,7 +51,7 @@ const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void })
         data.images.forEach(item => {
             formData.append("images", item, item.name)
         })
-        formData.append('userId' , userId || '')
+        formData.append('userId' , userId?.value || '6601754a952f2b90104cca0a')
         mutate(formData)
     }
 
