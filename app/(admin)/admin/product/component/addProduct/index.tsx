@@ -210,7 +210,7 @@ const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void })
                     </div>
                 }
                 <div className="w-full flex items-center justify-between">
-                    <Button loading={isPending} placeholder={''} type={'submit'} disabled={level < 3} size="sm">{'ویرایش کردن'}</Button>
+                    <Button loading={isPending} placeholder={''} type={'submit'} disabled={level < 3} size="sm">{'اضافه کردن'}</Button>
                     <Button disabled={level === 3} placeholder={''} type={'button'} onClick={() => level < 3 && setLevel(level + 1)} size="sm">{'بعدی'}</Button>
                 </div>            
                 </form>

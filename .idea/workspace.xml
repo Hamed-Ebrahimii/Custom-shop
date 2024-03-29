@@ -9,20 +9,21 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="add table editable">
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/slider/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/btn/btn-red.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/icon/order.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools/getItemCookie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_2_21_PM_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_Checkout_at_3_3_2024_2_21_PM__Changes_.xml" beforeDir="false" />
+    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="add page product">
+      <change afterPath="$PROJECT_DIR$/app/(shop)/component/pagination/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/component/slider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/api/login-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/login-admin.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/category/component/addCategory.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/category/component/addCategory.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/categorization/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/categorization/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/nav/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/validation/login-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validation/login-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -169,6 +170,12 @@
       <workItem from="1711541129189" duration="13000" />
       <workItem from="1711541561499" duration="1820000" />
       <workItem from="1711546695733" duration="831000" />
+      <workItem from="1711552841298" duration="2215000" />
+      <workItem from="1711609671503" duration="127000" />
+      <workItem from="1711626024734" duration="4259000" />
+      <workItem from="1711639546449" duration="1606000" />
+      <workItem from="1711644978289" duration="3247000" />
+      <workItem from="1711671980661" duration="3878000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -234,7 +241,15 @@
       <option name="project" value="LOCAL" />
       <updated>1709807931746</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="add page product">
+      <option name="closed" value="true" />
+      <created>1711553008562</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1711553008562</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,6 +278,7 @@
     <MESSAGE value="add table admin page" />
     <MESSAGE value="add new Product" />
     <MESSAGE value="add table editable" />
-    <option name="LAST_COMMIT_MESSAGE" value="add table editable" />
+    <MESSAGE value="add page product" />
+    <option name="LAST_COMMIT_MESSAGE" value="add page product" />
   </component>
 </project>

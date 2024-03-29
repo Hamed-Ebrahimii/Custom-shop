@@ -38,7 +38,7 @@ const AddCategory = ({setOpenModal , refetch} : {setOpenModal : (value : boolean
                     <div className={'w-full'}>
                        <Controller  control={control} render={({field})=>(
                            <Input {...field} crossOrigin={''} color={'blue-gray'} variant="standard" label="نام محصول"
-                                  placeholder="نام محصول"/>
+                                  placeholder="نام دسته بندی"/>
                        )} name={'name'}/>
                     </div>
                     

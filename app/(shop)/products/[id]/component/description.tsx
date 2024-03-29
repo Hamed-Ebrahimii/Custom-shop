@@ -2,11 +2,13 @@
 import {useState} from "react";
 import parse from 'html-react-parser';
 import {Product, ResponseSingleProduct} from "@/utils/types/global";
+import BtnRed from "@/component/btn/btn-red";
+import Order from "@/component/icon/order";
 
 const Description = ({product} : {product : ResponseSingleProduct }) =>{
     const [more , setMore] = useState(false)
     return(
-        <>
+        <div className={'w-full'}>
             <p className={'text-xl text-red-custom font-medium mt-5'}>
                 توضیحالت محصول
             </p>
@@ -29,12 +31,23 @@ const Description = ({product} : {product : ResponseSingleProduct }) =>{
                         توضیحات : {parse(product.product.description)}
 
                     </li>
-                    <button  onClick={()=> setMore(!more)} className={'text-red-custom'}>
+                    <button onClick={() => setMore(!more)} className={'text-red-custom'}>
                         {more ? 'بستن' : 'نمایش بیشتر'}
                     </button>
                 </ul>
+                <div className={'w-full flex items-center justify-between mt-8'}>
+                    <p className={'text-xl font-bold text-gray-700'}>
+                        تومان
+                        {product.product.price}
+                    </p>
+                    <BtnRed className={'flex items-center gap-2'}>
+                        سبد خرید
+                        <Order/>
+                    </BtnRed>
+                </div>
             </div>
-        </>
+
+        </div>
     )
 }
 export default Description

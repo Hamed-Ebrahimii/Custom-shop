@@ -6,6 +6,7 @@ import {Swiper, SwiperSlide, useSwiper} from "swiper/react";
 import 'swiper/css';
 import {Pagination} from "swiper/modules";
 const Categorization = () =>{
+
     const swiper = useSwiper()
     return(
         <div className={'w-full mt-10'}>
