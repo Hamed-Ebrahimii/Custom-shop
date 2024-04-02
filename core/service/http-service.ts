@@ -1,3 +1,4 @@
+
 import axios, {AxiosRequestConfig, AxiosResponse} from "axios";
 import {getToken} from "@/utils/tools/getToken";
 import { refreshToken } from "@/utils/tools/refreshToken";
@@ -11,7 +12,7 @@ const baseApi = async <T> (url : string , option : AxiosRequestConfig) : Promise
 }
 
 export const Create = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
-    const token = await getToken()
+    const token =  getToken()
     return await baseApi(url, {
         method : 'POST',
         headers : {
@@ -47,5 +48,11 @@ export const Read = async <T> (url : string ) : Promise<AxiosResponse<T>> =>{
         headers : {
             Authorization : 'Bearer ' + getToken()
         }
+    })
+}
+export const Login = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
+    return await baseApi(url , {
+        method : 'post',
+        data
     })
 }

@@ -8,6 +8,7 @@ interface Iedit {
     _id? : string,
     price : string,
     quantity : string,
+    userId : string
 }
 const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdite : (value : boolean)=> void , edit : boolean }) =>{
     const [product , setProduct] = useState<Iedit[]>([])
@@ -20,7 +21,8 @@ const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdi
             const productItem : Iedit = {
                 _id : id,
                 quantity : quantity,
-                price : String(price)
+                price : String(price),
+                userId : sessionStorage.getItem('userId') || '6601754a952f2b90104cca0a'
             }
             setProduct([...product , productItem])
         }
@@ -39,7 +41,8 @@ const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdi
             const productItem : Iedit = {
                 _id : id,
                 quantity : String(quantity),
-                price : String(price)
+                price : String(price),
+                userId : sessionStorage.getItem('userId') || '6601754a952f2b90104cca0a'
             }
             setProduct([...product , productItem])
         }
@@ -55,7 +58,7 @@ const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdi
             console.log(product)
         if (edit && product.length !== 0) {
             const promise = product.map(item =>(
-                Update<Product , Iedit>(`/api/products/${item._id}` , {price : item.price , quantity : item.quantity})
+                Update<Product , Iedit>(`/api/products/${item._id}` , {price : item.price , quantity : item.quantity , userId : item.userId})
             ))
             Promise.all(promise).then((result) =>{
                 console.log(result)

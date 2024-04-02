@@ -8,6 +8,7 @@ import TopDesigners from "@/app/(shop)/component/top-designers";
 import Categorization from "@/component/categorization";
 import Banner from "@/app/(shop)/component/banner";
 import Navigation from "@/component/nav";
+import School from "@/app/(shop)/component/school";
 
 const Home = ()=>{
     return(
@@ -19,6 +20,7 @@ const Home = ()=>{
             <SpecialSale/>
             <PopularDesigns/>
             <TopDesigners/>
+            <School/>
             <Banner/>
             <LatestDesigns/>
         </div>

@@ -8,7 +8,7 @@ import Order from "@/component/icon/order";
 const Description = ({product} : {product : ResponseSingleProduct }) =>{
     const [more , setMore] = useState(false)
     return(
-        <div className={'w-full'}>
+        <div className={'w-1/2'}>
             <p className={'text-xl text-red-custom font-medium mt-5'}>
                 توضیحالت محصول
             </p>
@@ -27,8 +27,8 @@ const Description = ({product} : {product : ResponseSingleProduct }) =>{
                     <li>
                         کیفیت :‌عالی
                     </li>
-                    <li className={`${more ? '' : 'h-32'} overflow-hidden`}>
-                        توضیحات : {parse(product.product.description)}
+                    <li className={`${more ? '' : 'h-32'} overflow-hidden `}>
+                        توضیحات : <span className={'!text-sm'}>{parse(product.product.description)}</span>
 
                     </li>
                     <button onClick={() => setMore(!more)} className={'text-red-custom'}>

@@ -1,19 +1,17 @@
-"use server"
-import Link from "next/link";
-import CartDesign from "@/app/(shop)/component/popular-designs/cart-design";
-import LikeShape from "@/app/(shop)/component/popular-designs/icon/like-shape";
 import {getAllProduct} from "@/api/getAllProduct";
-import CartProduct from "@/app/(shop)/component/cart-product";
 import Accessory from "@/app/(shop)/component/icon/accessory";
+import Link from "next/link";
+import CartProduct from "@/app/(shop)/component/cart-product";
+import Pen from "@/app/(shop)/component/icon/pen";
 
-const  PopularDesigns = async () =>{
-    const product = await getAllProduct('1' , '' , '8' , '65f040c5eafd9610a52beebf')
+const School = async () =>{
+    const product = await getAllProduct('1' , '' , '8' , '65f04338eafd9610a52beed9')
     return(
         <div className={'w-full mt-6'}>
             <div className={'w-full flex justify-between items-center gap-4'}>
                 <div className={'flex gap-2 items-center whitespace-nowrap'}>
-                    <Accessory className={'hidden md:block'} />
-                    <p className={'text-lg font-bold'}>اکسسوری</p>
+                    <Pen className={'hidden md:block'} />
+                    <p className={'text-lg font-bold'}>لوازم تحریر</p>
                 </div>
                 <hr className={'h-2 w-full mt-3 hidden md:block'}/>
                 <button>
@@ -28,4 +26,4 @@ const  PopularDesigns = async () =>{
         </div>
     )
 }
-export default PopularDesigns
+export default School

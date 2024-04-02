@@ -17,6 +17,9 @@ const CartProduct = ({product} : {product : Product}) =>{
             <div className={'w-full flex justify-end mt-7'}>
                 <p className={'text-lg font-bold'}>تومان {product.price}</p>
             </div>
+            <button className={'py-2 w-full rounded-lg text-white font-medium bg-red-custom mt-6 hover:shadow-xl md:w-5/12 '} onClick={()=> router.push(`/products/${product._id}`)}>
+                مشاهده و خرید
+            </button>
         </div>
     )
 }

@@ -1,6 +1,6 @@
 import {Controller, useForm} from "react-hook-form";
 import {IoMdCloseCircleOutline} from "react-icons/io";
-import {Breadcrumbs, Button, Input, Option, Select, Textarea} from "@material-tailwind/react";
+import {Breadcrumbs, Button, Input, Option, Select, Textarea, ThemeProvider} from "@material-tailwind/react";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {useMutation, useQuery} from "@tanstack/react-query";
 import {getAllCategories} from "@/api/getAllCategories";
@@ -12,10 +12,11 @@ import { EditProduct } from "@/utils/types/global";
 import { useEffect } from "react";
 import TextEditor from "../addProduct/component/textEditor";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
+import value = ThemeProvider.propTypes.value;
 
 const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModal : (data : boolean) => void , product : EditProduct , id : string  , refetch : ()=> void}) =>{
     const [disable , setDisable] = useState(true)
-    const [idCategory , setIdCategory] = useState('')
+    const [idCategory , setIdCategory] = useState(product.category || '')
     const [level , setLevel] = useState(1)
     const {control  , handleSubmit , formState : {errors}} = useForm<EditProductValidationType>({
         mode : "onBlur",
@@ -60,7 +61,7 @@ const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModa
        data.images && data.images.forEach(item =>{
             formData.append("images" , item  , item.name)
         })
-        
+        formData.append('userId' , sessionStorage.getItem('userId') || '235434' )
        mutate(formData)
     }
     useEffect(()=>{
@@ -74,7 +75,7 @@ const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModa
             <IoMdCloseCircleOutline className={'size-5'}/>
         </button>
         <p className={'text-xl font-bold text-gray-800 text-center'}>
-            اضافه کردن محصول
+            ویرایش کردن محصول
         </p>
         <div className="w-full flex justify-center">
         <Breadcrumbs 
@@ -187,15 +188,16 @@ const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModa
             <div className={'w-full grid grid-cols-2 grid-rows-1 gap-4 '}>
                 <div className={'w-full'}>
                    <Controller render={({field})=>(
-                       <Select onChange={(e => {
-                           console.log(e)
+                       <Select
+                           value={product.category }
+                           onChange={(e => {
                            setIdCategory(e || '')
                            setDisable(false)
                            field.onChange(e)
 
                        })} placeholder={''} variant="standard" label="دسته بندی محصول را انتخاب کنید" >
                            {
-                              category?.data.data.categories ?  category?.data.data.categories.map(item => <Option value={item._id} key={item._id}>{item.name}</Option>) : <Option>لطفا صبر کنید</Option>
+                              category?.data.data.categories ?  category?.data.data.categories.map(item => <Option  value={item._id}  key={item._id}>{item.name}</Option>) : <Option>لطفا صبر کنید</Option>
                            }
                        </Select>
                    )} name={'category'} control={control}/>
@@ -203,7 +205,9 @@ const EditProductModal = ({setOpenModal , product , id , refetch} : {setOpenModa
                 </div>
                 <div className={'w-full'}>
                    <Controller render={({field})=>(
-                       <Select {...field} disabled={disable || isLoading}  placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
+                       <Select onChange={(e)=>{
+                           field.onChange(e)
+                       }} value={product.subcategory }  placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
                            {
                              subCategory ?  subCategory?.map(item => <Option value={item._id} key={item._id}>{item.name}</Option>) : <Option>لطفا صبر کنید</Option>
                            }

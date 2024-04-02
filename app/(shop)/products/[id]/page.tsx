@@ -11,7 +11,7 @@ const Product = async ({ params }: { params: { id: string } }) =>{
     return(
         <div className="w-full min-h-screen p-5">
             <div className={'w-full flex flex-col md:flex-row'}>
-                <div className={'w-1/3'}>
+                <div className={'w-1/3 flex-1'}>
                     <Slider img={product.data.data.product.images}/>
                 </div>
                 <Description product={product.data.data}/>

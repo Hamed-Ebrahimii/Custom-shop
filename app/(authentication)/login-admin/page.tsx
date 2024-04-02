@@ -4,29 +4,32 @@ import {Button, Input} from "@material-tailwind/react";
 import {Controller, useForm} from "react-hook-form";
 import {zodResolver} from "@hookform/resolvers/zod";
 import {loginValidation, loginValidationType} from "@/utils/validation/login-validation";
-import {useMutation} from "@tanstack/react-query";
 import {loginAdmin} from "@/api/login-admin";
 import {useRouter} from "next/navigation";
+import {toast, ToastContainer} from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
+import {useMutation} from "@tanstack/react-query";
+
 const Login = () =>{
     const router = useRouter()
     const {control  , reset , handleSubmit , formState : {errors}} = useForm<loginValidationType>({
         resolver : zodResolver(loginValidation),
         mode : 'onBlur'
     })
-    const { status , isPending , mutate  } = useMutation({
-        mutationKey : ['loginValidation'],
+    const {isPending , mutate} = useMutation({
         mutationFn : (data : loginValidationType) => loginAdmin(data),
-        onSuccess : () =>{
+        onError : (errors) => toast(errors.message),
+        onSuccess : () => {
             router.push('/admin')
         }
     })
-    const onSubmit = async (data : loginValidationType) =>{
-
-          mutate(data)
+    const onSubmit =  (data : loginValidationType) =>{
+        mutate(data)
     }
   
     return(
         <div className={'w-full h-screen flex flex-col gap-4 justify-center items-center bg-gray-custom'}>
+            <ToastContainer/>
             <h1 className={'text-2xl font-medium text-gray-600'} >خوش آمدی (:</h1>
             <div className={'bg-white rounded-xl p-3 w-8/12 flex items-center'}>
             <div className={'w-full md:w-1/2'}>

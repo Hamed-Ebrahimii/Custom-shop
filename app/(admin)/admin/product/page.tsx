@@ -41,7 +41,7 @@ const Product = () =>{
         <>
             {
                 openModal && <Modal isOpen={openModal}>
-                    <AddProduct setOpenModal={setOpenModal}/>
+                    <AddProduct refetch={refetch} setOpenModal={setOpenModal}/>
                 </Modal>
             }
         <div className={'w-full bg-white p-5'}>

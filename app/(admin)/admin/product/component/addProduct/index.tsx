@@ -11,9 +11,10 @@ import { addProduct } from "@/api/addProduct";
 import TextEditor from "./component/textEditor";
 import { ArrowLongRightIcon } from "@heroicons/react/24/solid";
 import {getItemCookie} from "@/utils/tools/getItemCookie";
+import {toast, ToastContainer} from "react-toastify";
 
 
-const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void }) => {
+const AddProduct = ({ setOpenModal , refetch }: { setOpenModal: (data: boolean) => void  , refetch : ()=> void}) => {
     const [disable, setDisable] = useState(true)
     const [idCategory, setIdCategory] = useState('')
     const [level, setLevel] = useState(1)
@@ -35,7 +36,8 @@ const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void })
         mutationFn: (data: FormData) => addProduct(data),
         onSuccess: () => {
             setOpenModal(false)
-        }
+        },
+        onError : (error, variables, context) => toast(error.message)
     })
     const onSubmit = async (data: ProductValidationType) => {
         const userId = getItemCookie('userId')
@@ -57,6 +59,7 @@ const AddProduct = ({ setOpenModal }: { setOpenModal: (data: boolean) => void })
 
     return (
         <div className={'w-full md:w-6/12 py-4 px-6 bg-white rounded-lg'}>
+            <ToastContainer />
             <button onClick={() => setOpenModal(false)}>
                 <IoMdCloseCircleOutline className={'size-5'} />
             </button>

@@ -56,6 +56,7 @@ export const theme = {
                     position: "relative",
                     width: "w-full",
                     minWidth: "min-w-[200px]",
+                    textAlign : 'text-right'
                 },
                 select: {
                     peer: "peer",
@@ -111,6 +112,7 @@ export const theme = {
                     boxShadow: "shadow-lg shadow-blue-gray-500/10",
                     fontFamily: "font-sans",
                     fontSize: "text-sm",
+                    textAlign:  'text-right',
                     fontWeight: "font-normal",
                     color: "text-blue-gray-500",
                     overflow: "overflow-auto",
