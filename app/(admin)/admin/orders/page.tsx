@@ -16,7 +16,7 @@ const Order = () =>{
     const filter = params.get('filter')
     console.log(filter)
     const [openModal , setOpenModal] = useState(false)
-    const {data  , isLoading} = useQuery({
+    const {data  , isLoading , refetch} = useQuery({
         queryKey : [page , filter],
         queryFn : () => getAllOrders(page! , filter! )
     })
@@ -40,7 +40,7 @@ const Order = () =>{
         <>
             {
                 openModal && <Modal isOpen={openModal}>
-                    <AddProduct setOpenModal={setOpenModal}/>
+                    <AddProduct refetch={refetch} setOpenModal={setOpenModal}/>
                 </Modal>
             }
             <div className={'w-full bg-white p-5'}>

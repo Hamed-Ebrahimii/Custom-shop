@@ -10,28 +10,70 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase three">
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/icon/accessory.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/icon/pen.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/school/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/AddOrder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/api/addUser.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(pay)/pay/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/component/dress/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/component/errorMassage/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/login/component/formLogin/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/order/component/cartOrder/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/order/component/modaleDelete/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/order/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/pay-error/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/pay-succsess/page.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/signup/component/modal/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/(shop)/signup/component/signupForm/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/component/input/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Customer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Designer.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/Illustration.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/direct-payment.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/empty-cart.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/login-photo.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/پرداخت موفق.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/public/img/پرداخت ناموفق.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redux/provider/index.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redux/slice/orderSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redux/slice/userSlice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/redux/store/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/tools/getCookie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/tools/setCookie.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/tools/setUserId.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/tools/totalPrice.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/validation/userInfoValidation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/validation/userSignupValidation.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/getAllCategories.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/getAllCategories.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/api/login-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/login-admin.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/component/textEditor.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/component/textEditor.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/editProduct/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/editProduct/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(authentication)/login-admin/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/designer-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/designer-signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/login/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/signup/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(authentication)/user-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/user-signup/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/component/popular-designs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/popular-designs/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/component/school/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/school/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/component/slider/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/slider/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/component/special-sale/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/special-sale/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/material/theme.ts" beforeDir="false" afterPath="$PROJECT_DIR$/component/material/theme.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/btn/btn-red-outlin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/btn/btn-red-outlin.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/btn/btn-red.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/btn/btn-red.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/layout/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/layout/header/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/component/nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/nav/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/service/http-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/service/http-service.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tools/getItemCookie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getItemCookie.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/tools/getToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getToken.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/global.d.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/utils/validation/login-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validation/login-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,11 +160,11 @@
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/app/(pay)" />
+      <recent name="$PROJECT_DIR$/app/(shop)" />
       <recent name="D:\html-js-maktab\final project next" />
       <recent name="D:\html-js-maktab\final project next\app\(authentication)" />
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
-      <recent name="D:\html-js-maktab\final project next\app\(admin)" />
-      <recent name="D:\html-js-maktab\final project next\public\img" />
     </key>
   </component>
   <component name="RunManager">
@@ -191,6 +233,18 @@
       <workItem from="1712000542007" duration="1261000" />
       <workItem from="1712049152030" duration="4371000" />
       <workItem from="1712058035690" duration="7340000" />
+      <workItem from="1712156271511" duration="8339000" />
+      <workItem from="1712219423602" duration="13817000" />
+      <workItem from="1712245412190" duration="11905000" />
+      <workItem from="1712281659014" duration="2542000" />
+      <workItem from="1712303177363" duration="7401000" />
+      <workItem from="1712310866843" duration="1070000" />
+      <workItem from="1712312364552" duration="2191000" />
+      <workItem from="1712314679091" duration="1347000" />
+      <workItem from="1712316331235" duration="1874000" />
+      <workItem from="1712404791290" duration="4793000" />
+      <workItem from="1712415976514" duration="3100000" />
+      <workItem from="1712420551198" duration="5635000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

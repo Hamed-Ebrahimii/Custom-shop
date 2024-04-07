@@ -9,19 +9,20 @@ import Categorization from "@/component/categorization";
 import Banner from "@/app/(shop)/component/banner";
 import Navigation from "@/component/nav";
 import School from "@/app/(shop)/component/school";
+import Dress from "@/app/(shop)/component/dress";
 
 const Home = ()=>{
     return(
         <div className={'px-4 md:px-28'}>
-            <Navigation/>
+
             <Hero/>
             <Categorization/>
             <BestSellers/>
             <SpecialSale/>
             <PopularDesigns/>
-            <TopDesigners/>
             <School/>
             <Banner/>
+            <Dress/>
             <LatestDesigns/>
         </div>
     )

@@ -68,9 +68,12 @@ const Inventory = () =>{
                             </button>
                         </div>
                     </div>
-                        <div className={'w-full flex items-center justify-end mt-4'}>
+                        <div className={'w-full flex items-center justify-end mt-4 gap-3'}>
                             <Button disabled={edit} onClick={()=> setEdit(true)} placeholder={''} className="flex items-center gap-3" size="sm" >
                                 <UserPlusIcon strokeWidth={2} className="h-4 w-4" /> ذخیره
+                            </Button>
+                            <Button placeholder={''} onClick={()=> setEdit(true)} disabled={edit}>
+                                لغو
                             </Button>
                         </div>
                 </CardHeader>

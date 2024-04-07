@@ -177,3 +177,23 @@ interface SubCategoriesItem {
 interface ResponseCategory {
     "category" : ICategory
 }
+interface AddUser {
+    "firstname": string,
+    "lastname": string,
+    "username": string,
+    "password" : string,
+    "phoneNumber": string,
+    "address": string,
+    "role": string,
+}
+interface AddOrder {
+    "user": string,
+    "products":
+        {
+            "product": string,
+            "count": number
+        }[]
+    ,
+    "deliveryStatus": boolean,
+
+}

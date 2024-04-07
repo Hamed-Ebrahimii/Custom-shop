@@ -8,8 +8,14 @@ import {CiMenuBurger} from "react-icons/ci";
 import { useRouter } from "next/navigation";
 import { useQuery } from "@tanstack/react-query";
 import { getAllCategories } from "@/api/getAllCategories";
-import { useState } from "react";
+import {useEffect, useState} from "react";
 import NavMobile from "./component/navMobile";
+import Link from "next/link";
+import {Badge} from "@material-tailwind/react";
+import {useSelector} from "react-redux";
+import {RootState} from "@/redux/store";
+import {getItemCookie} from "@/utils/tools/getItemCookie";
+import {FaRegUserCircle} from "react-icons/fa";
 
 const Header = () => {
     const router = useRouter()
@@ -17,7 +23,16 @@ const Header = () => {
         queryKey : ['categoris'],
         queryFn : () => getAllCategories()
     })
+    const order = useSelector((data : RootState)=> data.order)
     const [navMobile , setNaveMobile] = useState(false)
+    const [token , setToken] = useState('')
+    const handleCookie = async () =>{
+        const getToken  = await getItemCookie('token')
+        setToken(getToken?.value || '')
+    }
+    useEffect(()=>{
+        handleCookie()
+    } , [])
     return(
         <div className={'font-yekan'}>
             <div className={'w-full flex justify-center items-center py-2 bg-red-custom'}>
@@ -38,14 +53,20 @@ const Header = () => {
                         </button>
                     </form>
                     <div className={'items-center hidden md:flex'}>
-                        <button className={'w-36 flex items-center gap-2'}>
-                            <Login/>
-                            <p className={'font-yekan text-gray-700 text-lg font-bold'}>ورود | ثبت نام</p>
-                        </button>
-                        <button className={'w-32 flex items-start gap-2 justify-center'}>
-                            <Cart/>
-                            <p className={'font-yekan text-gray-700 text-lg font-bold'}>سبد خرید</p>
-                        </button>
+                        <Link href={token ? '/users-profile' : '/login'} className={'w-36 flex justify-center items-center gap-2'}>
+                            {
+                                token ? <FaRegUserCircle className={'size-8 text-gray-700'} /> : <>
+                                    <Login/>
+                                    <p className={'font-yekan text-gray-700 text-lg font-bold'}>ورود |‌ثبت نام</p>
+                                </>
+                            }
+                        </Link>
+                        <Badge content={String(order.products.length)}>
+                            <Link href={'/order'} className={'w-32 flex items-start gap-2 justify-center'}>
+                                <Cart/>
+                                <p className={'font-yekan text-gray-700 text-lg font-bold'}>سبد خرید</p>
+                            </Link>
+                        </Badge>
                     </div>
                     <LogoMobile className={'md:hidden'}/>
                 </div>

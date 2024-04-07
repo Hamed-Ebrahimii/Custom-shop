@@ -36,6 +36,7 @@ const AddProduct = ({ setOpenModal , refetch }: { setOpenModal: (data: boolean) 
         mutationFn: (data: FormData) => addProduct(data),
         onSuccess: () => {
             setOpenModal(false)
+            refetch()
         },
         onError : (error, variables, context) => toast(error.message)
     })
@@ -193,7 +194,9 @@ const AddProduct = ({ setOpenModal , refetch }: { setOpenModal: (data: boolean) 
                             </div>
                             <div className={'w-full'}>
                                 <Controller render={({ field }) => (
-                                    <Select {...field} disabled={disable || isLoading} placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
+                                    <Select onChange={(e)=>{
+                                        field.onChange(e)
+                                    }} disabled={disable || isLoading} placeholder={''} variant="standard" label="زیر مجموعه دسته بندی را انتخاب کنید">
                                         {
                                             subCategory ? subCategory?.map(item => <Option value={item._id} key={item._id}>{item.name}</Option>) : <Option>لطفا صبر کنید</Option>
                                         }

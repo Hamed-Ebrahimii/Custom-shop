@@ -10,7 +10,7 @@ const SpecialSale = () =>{
                 </div>
                 <hr className={'w-10/12 h-3 my-auto mt-6 hidden md:block'}/>
             </div>
-            <div className={'mt-6 w-full flex flex-col md:flex-row items-center gap-6 '}>
+            <div className={'mt-6 w-full flex flex-col md:flex-row items-center justify-center gap-6 '}>
                 <div className={'w-full h-[120px] md:w-[600px] md:h-[576px] overflow-hidden rounded-xl relative'}>
                     <img src={'/img/spacejoy-IH7wPsjwomc-unsplash.jpg'} alt={''}  className={'w-full h-full object-cover'}/>
                     <div className={'w-full h-full absolute top-0 bg-gradient-to-t from-black '}>

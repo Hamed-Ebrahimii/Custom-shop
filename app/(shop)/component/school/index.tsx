@@ -1,5 +1,4 @@
 import {getAllProduct} from "@/api/getAllProduct";
-import Accessory from "@/app/(shop)/component/icon/accessory";
 import Link from "next/link";
 import CartProduct from "@/app/(shop)/component/cart-product";
 import Pen from "@/app/(shop)/component/icon/pen";
@@ -18,7 +17,7 @@ const School = async () =>{
                     <Link href={''} className={'text-red-custom '}>بیشتر</Link>
                 </button>
             </div>
-            <div className={'w-full grid grid-rows-4 grid-cols-2 gap-4 mt-3 md:grid-cols-4 md:grid-rows-2'}>
+            <div className={'w-full grid  grid-cols-2 gap-4 mt-3 md:grid-cols-4 md:grid-rows-1'}>
                 {
                     product.data.data.products.map(item => <CartProduct key={item._id} product={item}/>)
                 }

@@ -12,7 +12,8 @@ const baseApi = async <T> (url : string , option : AxiosRequestConfig) : Promise
 }
 
 export const Create = async <T , dataType> (url : string , data : dataType) : Promise<AxiosResponse<T>> =>{
-    const token =  getToken()
+    const token =  await getToken()
+    console.log(token)
     return await baseApi(url, {
         method : 'POST',
         headers : {

@@ -20,7 +20,7 @@ const  PopularDesigns = async () =>{
                     <Link href={''} className={'text-red-custom '}>بیشتر</Link>
                 </button>
             </div>
-            <div className={'w-full grid grid-rows-4 grid-cols-2 gap-4 mt-3 md:grid-cols-4 md:grid-rows-2'}>
+            <div className={'w-full grid  grid-cols-2 gap-4 mt-3 md:grid-cols-4'}>
                 {
                     product.data.data.products.map(item => <CartProduct key={item._id} product={item}/>)
                 }

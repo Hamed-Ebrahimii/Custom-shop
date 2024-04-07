@@ -32,7 +32,6 @@ const CustomDesign = () =>{
                     <Spinner className="h-16 w-16 text-gray-900/50" color="red"/>
                 </div>
             }
-            <Navigation/>
             <div className={'w-full flex items-center justify-between my-4'}>
                 <p className={'text-lg text-red-custom font-bold'}>
                     دسته بندی : {categoryName?.data.data.category.name}

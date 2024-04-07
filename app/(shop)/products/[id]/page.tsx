@@ -1,9 +1,6 @@
 import {getProductById} from "@/api/getProductById";
 import Slider from "@/app/(shop)/component/slider";
 import Description from "@/app/(shop)/products/[id]/component/description";
-import {getCategoryById} from "@/api/getCategoryById";
-import BtnRed from "@/component/btn/btn-red";
-import Order from "@/component/icon/order";
 import SliderProduct from "@/app/(shop)/products/[id]/component/slider";
 
 const Product = async ({ params }: { params: { id: string } }) =>{

@@ -95,7 +95,7 @@ const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdi
                             <td className={classes} onClick={()=> {setQuantityEdit([...quantityEdit , _id]) ; setEdite(false)}}>
                                 <div className="flex flex-col">
                                     {
-                                        quantityEdit.find(item => item === _id) ? <input type="number" min={0} defaultValue={quantity} onChange={(event)=> handleQuantity(_id , event.target.value , price)} className={'border-none outline-none w-full'} placeholder={`${quantity}`}/> : <p>{quantity}</p>
+                                     !edit &&  quantityEdit.find(item => item === _id) ? <input type="number" min={0} defaultValue={quantity} onChange={(event)=> handleQuantity(_id , event.target.value , price)} className={'border-none outline-none w-full'} placeholder={`${quantity}`}/> : <p>{quantity}</p>
                                     }
 
                                 </div>
@@ -107,7 +107,7 @@ const TableRow = ({tableRow , setEdite , edit} : {tableRow : Product[] ,  setEdi
                                     color="blue-gray"
                                     className="font-normal"
                                 >
-                                    {priceEdit.find(item => item === _id) ? <input type="number" min={0} defaultValue={price} onChange={(event)=> handlePrice(_id  , quantity , event.target.value)} className={'border-none outline-none w-full'} placeholder={`${price}`}/> : <p>{price}</p>}
+                                    {!edit && priceEdit.find(item => item === _id) ? <input type="number" min={0} defaultValue={price} onChange={(event)=> handlePrice(_id  , quantity , event.target.value)} className={'border-none outline-none w-full'} placeholder={`${price}`}/> : <p>{price}</p>}
                                 </Typography>
                             </td>
 

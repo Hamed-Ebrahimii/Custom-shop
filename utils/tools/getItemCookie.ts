@@ -1,6 +1,6 @@
 "use server"
 import {cookies} from "next/headers";
 
-export const getItemCookie = (key : string) =>{
-    return cookies().get(key)
+export const getItemCookie = async (key : string) =>{
+    return await cookies().get(key)
 }

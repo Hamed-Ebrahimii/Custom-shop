@@ -5,7 +5,7 @@ import 'swiper/css';
 import {IoIosArrowBack} from "react-icons/io";
 const Slider = ({img} : {img : string[]}) =>{
     return(
-        <div className={'w-full flex flex-col md:flex-row-reverse gap-4 '}>
+        <div className={'w-full flex flex-col md:flex-row-reverse gap-1 '}>
 
             <Swiper
                 className={'relative'}
@@ -15,7 +15,7 @@ const Slider = ({img} : {img : string[]}) =>{
                     el: '.pagination',
                     renderBullet: (index: number, className) => {
                         return `
-                            <div class="size-10 rounded-lg overflow-hidden my-5 cursor-pointer ${className}">
+                            <div class="size-14 rounded-lg overflow-hidden my-5 cursor-pointer ${className}">
                                 <img src="${'http://127.0.0.1:8000/images/products/images/' + img[index]}" class="w-full h-full object-cover"/>
                             </div>
                         `
@@ -31,10 +31,10 @@ const Slider = ({img} : {img : string[]}) =>{
             >
                 {
                     img.map(item => (
-                        <SwiperSlide className={'!w-full !flex !justify-center'} key={item}>
+                        <SwiperSlide className={' !flex !justify-center'} key={item}>
 
                             <img src={'http://127.0.0.1:8000/images/products/images/' + item} alt=""
-                                 className={'size-80 object-cover rounded-lg'}/>
+                                 className={'size-96 object-cover rounded-lg'}/>
 
                         </SwiperSlide>
 
@@ -43,12 +43,12 @@ const Slider = ({img} : {img : string[]}) =>{
                 }
                 <button
 
-                    className={'absolute left-20 z-50 top-1/2 bg-blue-gray-400/40 size-8 flex items-center justify-center rounded-full cursor-pointer next'}>
+                    className={` ${img.length === 1 ? 'hidden' : ''} absolute left-20 z-50 top-1/2 bg-blue-gray-400/40 size-8 flex items-center justify-center rounded-full cursor-pointer next`}>
                     <IoIosArrowBack className={'text-3xl'}/>
                 </button>
                 <button
 
-                    className={'absolute right-20 z-50 rotate-180 top-1/2 bg-blue-gray-400/40 size-8 flex items-center justify-center rounded-full cursor-pointer prev'}>
+                    className={` ${img.length === 1 ? 'hidden' : ''} absolute right-20 z-50 rotate-180 top-1/2 bg-blue-gray-400/40 size-8 flex items-center justify-center rounded-full cursor-pointer prev`}>
                     <IoIosArrowBack className={'text-3xl'}/>
                 </button>
             </Swiper>
