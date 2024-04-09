@@ -18,7 +18,7 @@ const Order = () =>{
     const router = useRouter()
 
     const handleSubmit =  ()=>{
-
+        router.push('/order/address')
     }
     return(
         <div className={'w-full flex gap-3 py-10 px-28'}>
