@@ -41,7 +41,7 @@ const AddProduct = ({ setOpenModal , refetch }: { setOpenModal: (data: boolean) 
         onError : (error, variables, context) => toast(error.message)
     })
     const onSubmit = async (data: ProductValidationType) => {
-        const userId = getItemCookie('userId')
+        const userId = await getItemCookie('userId')
         const formData = new FormData()
         formData.append("name", data.name)
         formData.append("brand", data.brand)

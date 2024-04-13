@@ -7,7 +7,7 @@ import { getAllProduct } from "@/api/getAllProduct";
 const LatestDesigns = async () =>{
     let listProduct
     try{
-            listProduct = await getAllProduct('1' , '', '8')
+            listProduct = await getAllProduct('1' , '', '7')
     }catch(e){
 
     }

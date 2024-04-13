@@ -7,7 +7,7 @@ import {setUserId} from "@/utils/tools/setUserId";
 export const loginAdmin = async (data : loginValidationType ) =>{
     const response =  await Login<ILogin , loginValidationType>('/api/auth/login' , data)
     await setCookie('userId' , response.data.data.user._id)
-    await setCookie('token' , response.data.token.accessToken)
+    await setCookie('token' , response.data.token.accessToken )
     setUserId(response.data.data.user._id)
 
 }

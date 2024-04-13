@@ -14,7 +14,6 @@ const Order = () =>{
     const params = useSearchParams()
     const page = params.get('page')
     const filter = params.get('filter')
-    console.log(filter)
     const [openModal , setOpenModal] = useState(false)
     const {data  , isLoading , refetch} = useQuery({
         queryKey : [page , filter],
@@ -24,7 +23,7 @@ const Order = () =>{
     const TABS = [
         {
             label: "همه",
-            value: "All",
+            value: "all",
         },
         {
             label: "سفارشات درحال ارسال",
@@ -86,10 +85,10 @@ const Order = () =>{
                         صفحه {data?.data.page} از {data?.data.total_pages}
                     </Typography>
                     <div className="flex gap-2">
-                        <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/product?page=${Number(page) -1  }&filter=${filter}`)}>
+                        <Button disabled={Number(page) <=1} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/orders?page=${Number(page) -1  }&filter=${filter}`)}>
                             صفحه قبل
                         </Button>
-                        <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/product?page=${Number(page) + 1}&filter=${filter}`)}>
+                        <Button disabled={Number(page) >= data?.data.total_pages!} placeholder={''} variant="outlined" size="sm" onClick={()=> router.push(`/admin/orders?page=${Number(page) + 1}&filter=${filter}`)}>
                             صفحه بعد
                         </Button>
                     </div>

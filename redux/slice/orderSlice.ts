@@ -5,7 +5,8 @@ const initialState : AddOrder = {
     user : '',
     products : [],
 
-    deliveryStatus : false
+    deliveryStatus : false,
+    deliveryDate : ''
 }
 const orderSlice = createSlice({
     name : 'order',
@@ -15,6 +16,7 @@ const orderSlice = createSlice({
             state.user = action.payload.user
             state.deliveryStatus = action.payload.deliveryStatus
             state.products = action.payload.products
+            state.deliveryDate = action.payload.deliveryDate
         }
     }
 

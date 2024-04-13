@@ -1,13 +1,17 @@
 "use client"
+import { addOrderApi } from "@/api/AddOrder"
 import { addOrder } from "@/redux/slice/orderSlice"
 import { RootState } from "@/redux/store"
 import { totalPrice } from "@/utils/tools/totalPrice"
-import { useQuery } from "@tanstack/react-query"
+import { AddOrder } from "@/utils/types/global"
+import { useMutation, useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { TbDiscount2 } from "react-icons/tb"
+import { DateObject } from "react-multi-date-picker"
 import { useDispatch, useSelector } from "react-redux"
-
-const CartTotalPrice = () =>{
+import { ToastContainer, toast } from "react-toastify"
+import "react-toastify/ReactToastify.css"
+const CartTotalPrice = ({date} : {date? : string}) =>{
     const order = useSelector((data : RootState)=> data.order)
     const dispatch = useDispatch()
     const router = useRouter()
@@ -15,14 +19,39 @@ const CartTotalPrice = () =>{
         queryKey : [order],
         queryFn : () => totalPrice(order.products)
     })
+    const {mutate} = useMutation({
+        mutationFn : (data : AddOrder) => addOrderApi(data),
+        onSuccess : () =>{
+            router.push('/pay')
+        },
+        onError : () =>{
+            toast('لطفا دوباره وارد حساب خود شوید ')
+            router.push('/login')
+        }
+    })
     const handleSubmit =  ()=>{
         const id = sessionStorage.getItem('userId')
-        
-        dispatch(addOrder({...order ,  user : id || ''}))
+        console.log(id);
+        if(!date){
+            toast('لطفا تاریخ ارسال را انتخاب کنید' ,{
+                type : 'error'
+            })
+            return
+        }
+        if (id) {
+            console.log(date);
+            
+            dispatch(addOrder({...order ,  deliveryDate : date || new DateObject().format()}))
+            mutate(order)
+            return
+        }
+        toast('لطفا وارد حساب کاربری خود شوید ')
+        router.push('/login')
         
     }
     return(
         <div className={` w-full flex justify-center`}>
+            <ToastContainer/>
         <div className={'w-10/12 border p-7 rounded-lg'}>
             <ul className={'space-y-4 mt-6'}>
                 <li className={'w-full flex items-center justify-between'}>

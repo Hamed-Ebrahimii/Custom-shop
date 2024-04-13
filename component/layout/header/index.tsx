@@ -26,9 +26,9 @@ const Header = () => {
     const order = useSelector((data : RootState)=> data.order)
     const [navMobile , setNaveMobile] = useState(false)
     const [token , setToken] = useState('')
-    const handleCookie = async () =>{
-        const getToken  = await getItemCookie('token')
-        setToken(getToken?.value || '')
+    const handleCookie =  () =>{
+        
+        setToken(sessionStorage.getItem('userId') || '')
     }
     useEffect(()=>{
         handleCookie()

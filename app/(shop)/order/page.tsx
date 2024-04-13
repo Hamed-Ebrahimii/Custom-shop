@@ -4,10 +4,11 @@ import {useDispatch, useSelector} from "react-redux";
 import {RootState} from "@/redux/store";
 import { useQuery} from "@tanstack/react-query";
 import {totalPrice} from "@/utils/tools/totalPrice";
-import {ToastContainer} from "react-toastify";
+import {ToastContainer, toast} from "react-toastify";
 import {useRouter} from "next/navigation";
 import {TbDiscount2} from "react-icons/tb";
 import {RiErrorWarningLine} from "react-icons/ri";
+import { addOrder } from "@/redux/slice/orderSlice";
 const Order = () =>{
     const order = useSelector((data : RootState)=> data.order)
     const {data} = useQuery({
@@ -18,7 +19,16 @@ const Order = () =>{
     const router = useRouter()
 
     const handleSubmit =  ()=>{
-        router.push('/order/address')
+        const id = sessionStorage.getItem('userId')
+        console.log(id);
+        
+        if (id) {
+            router.push('/order/address')
+            dispatch(addOrder({...order ,  user : id || ''}))
+            return
+        }
+        toast('لطفا وارد حساب کاربری خود شوید ')
+        router.push('/login')
     }
     return(
         <div className={'w-full flex gap-3 py-10 px-28'}>

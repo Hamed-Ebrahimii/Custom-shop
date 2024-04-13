@@ -47,7 +47,7 @@ const FormLogin = () =>{
                 <Controller render={({field})=>(
                     <Input {...field} placeholder={'رمز عبور را وارد کنید'} type={'password'}/>
                 )} name={'password'} control={control}/>
-                ${errors.password?.message && <ErrorMassage errorMassage={errors.password.message}/>}
+                {errors.password?.message && <ErrorMassage errorMassage={errors.password.message}/>}
             </div>
             <p className={'font-semibold text-xs'}>ورود و عضویت شما به منزله پذیرفتن قوانین و مقررات می باشد.</p>
             <BtnRed className={'w-full'}>

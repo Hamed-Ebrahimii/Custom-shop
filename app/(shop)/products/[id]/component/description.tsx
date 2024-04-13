@@ -20,10 +20,11 @@ const Description = ({product} : {product : ResponseSingleProduct }) =>{
         if (find){
             const newOrder = JSON.parse(JSON.stringify(order))
             const products = order.products.find(item => item.product === product.product._id)
-            const newProduct : {product : string , count : number} = {...products! ,count : number  + 1 }
+            const newProduct : {product : string , count : number} = {...products! ,count : number   + find.count }
             const index = order.products.findIndex(item => item.product === product.product._id)
             newOrder.products.splice(index , 1 , newProduct)
             dispatch(addOrder({...newOrder}))
+            toast('سبد خرید شما ویرایش شد')
             return
         }
         dispatch(addOrder({...order , products : [...order.products , {product : product.product._id , count : number }]}))
