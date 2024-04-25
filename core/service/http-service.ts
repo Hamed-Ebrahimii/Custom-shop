@@ -5,8 +5,10 @@ import { refreshToken } from "@/utils/tools/refreshToken";
 
 const httpService = axios.create({
     baseURL : 'http://localhost:8000',
+    
 
 })
+
 const baseApi = async <T> (url : string , option : AxiosRequestConfig) : Promise<AxiosResponse<T>> =>{
     return await httpService(url, option)
 }
@@ -29,7 +31,7 @@ export const Update = async <T , dataType> (url : string , data : dataType) : Pr
     return await baseApi(url, {
         method : 'PATCH',
         headers : {
-            Authorization : 'Bearer ' + getToken()
+            Authorization : 'Bearer ' + await getToken()
         },
         data
     })

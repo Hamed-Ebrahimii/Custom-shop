@@ -7,13 +7,11 @@ import { AddOrder } from "@/utils/types/global"
 import { useMutation, useQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { TbDiscount2 } from "react-icons/tb"
-import { DateObject } from "react-multi-date-picker"
-import { useDispatch, useSelector } from "react-redux"
+import { useSelector } from "react-redux"
 import { ToastContainer, toast } from "react-toastify"
 import "react-toastify/ReactToastify.css"
 const CartTotalPrice = ({date} : {date? : string}) =>{
     const order = useSelector((data : RootState)=> data.order)
-    const dispatch = useDispatch()
     const router = useRouter()
     const {data} = useQuery({
         queryKey : [order],
@@ -29,7 +27,7 @@ const CartTotalPrice = ({date} : {date? : string}) =>{
             router.push('/login')
         }
     })
-    const handleSubmit =  ()=>{
+    const handleSubmit =   ()=>{
         const id = sessionStorage.getItem('userId')
         console.log(id);
         if(!date){
@@ -41,7 +39,7 @@ const CartTotalPrice = ({date} : {date? : string}) =>{
         if (id) {
             console.log(date);
             
-            dispatch(addOrder({...order ,  deliveryDate : date || new DateObject().format()}))
+          
             mutate(order)
             return
         }

@@ -8,13 +8,24 @@ import DatePicker, { DateObject } from "react-multi-date-picker"
 import persian from "react-date-object/calendars/persian"
 import persian_fa from "react-date-object/locales/persian_fa"
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { RootState } from "@/redux/store";
+import { addOrder } from "@/redux/slice/orderSlice";
 const Address = () => {
     const id = sessionStorage.getItem('userId')
     const { data } = useQuery({
         queryKey: ["address"],
         queryFn: () => getUserById(id || '')
     })
+    const order = useSelector((selector : RootState) => selector.order)
+    const dispatch = useDispatch()
     const [date, setDate] = useState< DateObject >(null!)
+    const handleChange = (event :  DateObject | DateObject[] | null) =>{
+        console.log(event);
+    
+        event && !Array.isArray(event) && setDate(event)
+        event && !Array.isArray(event) && dispatch(addOrder({...order , deliveryDate : event.format()}))
+    }
     return (
         <div className={'w-full flex py-8 px-12'}>
             <div className={'w-8/12 space-y-4'}>
@@ -34,7 +45,7 @@ const Address = () => {
                         </p>
                         <DatePicker
                             
-                            onChange={(e)=> {e && !Array.isArray(e) && setDate(e)}}
+                            onChange={(e)=> handleChange(e)}
                             minDate={new DateObject({ calendar: persian }).set('day' , new DateObject({ calendar: persian, locale: persian_fa }).day + 1)}
                             calendar={persian}
                             locale={persian_fa}
