@@ -66,8 +66,8 @@ const Info = ({id  , close} : {id : string , close : (value : boolean) => void})
                 </div>
                 <div className="w-full  max-h-48 overflow-auto space-y-5">
                             {
-                                data?.data.data.order.products.map(({product : {thumbnail , name , price} , count}) => (
-                                    <div className="w-full py-3 px-5 border rounded-lg grid grid-cols-4 gap-4">
+                                data?.data.data.order.products.map(({product : {thumbnail , name , price , _id} , count}) => (
+                                    <div  key={_id} className="w-full py-3 px-5 border rounded-lg grid grid-cols-4 gap-4">
                                             <Avatar placeholder={''} src={'http://127.0.0.1:8000/images/products/thumbnails/'+thumbnail} alt={name} size="sm" />
                                             <Typography
                                             placeholder={''}
