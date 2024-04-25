@@ -3,7 +3,7 @@ import {Orders, ResponseApi} from "@/utils/types/global";
 import {getUserById} from "@/api/getUserById";
 import {getProductById} from "@/api/getProductById";
 export const EditResponseOrder = async (page : string , filter? : string) =>{
-    const response = await getAllOrders(page)
+    const response = await getAllOrders(page , '')
     let newListOrders : Orders = {
         orders : []
     }
