@@ -4,7 +4,7 @@ import {getToken} from "@/utils/tools/getToken";
 import { refreshToken } from "@/utils/tools/refreshToken";
 
 const httpService = axios.create({
-    baseURL : 'http://localhost:8000',
+    baseURL : 'https://peaceful-jones-kbefsebgz.liara.run',
     
 
 })

@@ -10,6 +10,7 @@ import Loading from "@/component/loading/loading";
 import { getAllCategories } from "@/api/getAllCategories";
 import TableCategory from "../component/table/tableCategory";
 import AddCategory from "./component/addCategory";
+import { Suspense } from 'react'
 
 const Category = () =>{
     const params = useSearchParams()
@@ -21,6 +22,7 @@ const Category = () =>{
     })
     const router = useRouter()
     return(
+        <Suspense fallback={<div>error</div>}>
         <>
             {
                 openModal && <Modal isOpen={openModal}>
@@ -46,7 +48,7 @@ const Category = () =>{
                     </div>
                 </div>
                 <div className="flex flex-col items-center justify-between gap-4 md:flex-row">
-                   
+
                     <div className="w-full md:w-72 relative flex">
                         <Input
                             crossOrigin={''}
@@ -77,6 +79,7 @@ const Category = () =>{
             </CardFooter>
         </div>
         </>
+        </Suspense>
     )
 }
 export default Category

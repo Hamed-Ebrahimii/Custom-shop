@@ -10,70 +10,19 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase three">
-      <change afterPath="$PROJECT_DIR$/api/AddOrder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/api/addUser.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(pay)/pay/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/dress/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/component/errorMassage/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/login/component/formLogin/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/order/component/cartOrder/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/order/component/modaleDelete/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/order/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/pay-error/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/pay-succsess/page.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/signup/component/modal/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/(shop)/signup/component/signupForm/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/component/input/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Customer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Designer.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/Illustration.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/direct-payment.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/empty-cart.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/login-photo.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/پرداخت موفق.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/public/img/پرداخت ناموفق.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux/provider/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux/slice/orderSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux/slice/userSlice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/redux/store/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools/getCookie.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools/setCookie.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools/setUserId.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/tools/totalPrice.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validation/userInfoValidation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/utils/validation/userSignupValidation.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/api/login-admin.ts" beforeDir="false" afterPath="$PROJECT_DIR$/api/login-admin.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/category/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/category/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(authentication)/designer-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/designer-signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(authentication)/login/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/login/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(authentication)/signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(authentication)/user-signup/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/user-signup/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/popular-designs/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/popular-designs/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/school/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/school/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/slider/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/slider/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/special-sale/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/special-sale/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/component/description.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/products/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/products/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/btn/btn-red-outlin.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/btn/btn-red-outlin.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/btn/btn-red.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/btn/btn-red.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/layout/header/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/layout/header/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/component/nav/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/component/nav/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/subcategory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/subcategory/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/core/service/http-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/service/http-service.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/tools/getItemCookie.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getItemCookie.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/tools/getToken.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/tools/getToken.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/types/global.d.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/types/global.d.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/utils/validation/login-validation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/utils/validation/login-validation.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,6 +37,7 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="JavaScript File" />
       </list>
     </option>
   </component>
@@ -105,14 +55,12 @@
     &quot;assignee&quot;: &quot;hamed0018&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings">
-    <option name="selectedUrlAndAccountId">
-      <UrlAndAccount>
-        <option name="accountId" value="07dfd86d-d4cd-4660-b68f-c6b810619df9" />
-        <option name="url" value="https://github.com/hamed0018/Custome-Online-Shop" />
-      </UrlAndAccount>
-    </option>
-  </component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/Hamed-Ebrahimii/Custom-shop.git",
+    "accountId": "0852c1cc-fa68-4c9a-bceb-151c8915bc5c"
+  }
+}]]></component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -128,29 +76,32 @@
     <option name="showLibraryContents" value="true" />
     <option name="showVisibilityIcons" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.readMode.enableVisualFormatting&quot;: &quot;true&quot;,
-    &quot;cf.first.check.clang-format&quot;: &quot;false&quot;,
-    &quot;cidr.known.project.marker&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;phase-three&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/home/hamedi/WebstormProjects/maktab103-project-soha-khosravani&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/home/hamedi/WebstormProjects/maktab-103-final-project/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_ADD_EXTERNAL_FILES": "true",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "master",
+    "ignore.virus.scanning.warn.message": "true",
+    "last_opened_file_path": "/home/hamedi/WebstormProjects/maktab103-project-soha-khosravani",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\CLion 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\html-js-maktab\final project next\app\(shop)\users-profile" />
@@ -168,13 +119,13 @@
     </key>
   </component>
   <component name="RunManager">
-    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
+        <script value="build" />
       </scripts>
-      <node-interpreter value="$USER_HOME$/.nvm/versions/node/v20.9.0/bin/node" />
+      <node-interpreter value="node" />
       <envs />
       <method v="2" />
     </configuration>
@@ -245,6 +196,7 @@
       <workItem from="1712404791290" duration="4793000" />
       <workItem from="1712415976514" duration="3100000" />
       <workItem from="1712420551198" duration="5635000" />
+      <workItem from="1715945368242" duration="2601000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

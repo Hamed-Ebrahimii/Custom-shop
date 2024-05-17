@@ -9,6 +9,7 @@ import AddProduct from "@/app/(admin)/admin/product/component/addProduct";
 import Loading from "@/component/loading/loading";
 import {getAllOrders} from "@/api/getAllOrders";
 import TableOrder from "@/app/(admin)/admin/component/table/table-order";
+import { Suspense } from 'react'
 
 const Order = () =>{
     const params = useSearchParams()
@@ -36,6 +37,8 @@ const Order = () =>{
     ];
 
     return(
+        <Suspense fallback={<div>error</div>}>
+
         <>
             {
                 openModal && <Modal isOpen={openModal}>
@@ -95,6 +98,7 @@ const Order = () =>{
                 </CardFooter>
             </div>
         </>
+        </Suspense>
     )
 }
 export default Order

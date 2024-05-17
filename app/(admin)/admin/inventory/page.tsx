@@ -8,6 +8,8 @@ import {MagnifyingGlassIcon} from "@heroicons/react/24/outline";
 import TableEdite from "@/app/(admin)/admin/component/table/table-edite";
 import {useState} from "react";
 import Loading from "@/component/loading/loading";
+import { Suspense } from 'react'
+
 const Inventory = () =>{ 
     const params = useSearchParams()
     const page = params.get('page')
@@ -33,6 +35,8 @@ const Inventory = () =>{
     ];
     const router = useRouter()
     return(
+        <Suspense fallback={<div>error</div>}>
+
         <>
 
             <div className={'w-full bg-white p-5'}>
@@ -93,6 +97,7 @@ const Inventory = () =>{
                 </CardFooter>
             </div>
         </>
+        </Suspense>
     )
 }
 export default Inventory
