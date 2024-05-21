@@ -11,8 +11,8 @@ import Modal from "@/component/modal";
 import AddProduct from "@/app/(admin)/admin/product/component/addProduct";
 import Loading from "@/component/loading/loading";
 import { Suspense } from 'react'
-
-
+export const dynamic = 'force-dynamic'
+export const dynamicParams = true
 const Product = () =>{
     const params = useSearchParams()
     const page = params.get('page')
@@ -40,7 +40,7 @@ const Product = () =>{
     ];
     
     return(
-        <Suspense fallback={<div>error</div>}>
+
 
         <>
             {
@@ -106,7 +106,7 @@ const Product = () =>{
             </CardFooter>
         </div>
         </>
-        </Suspense>
+
     )
 }
 export default Product

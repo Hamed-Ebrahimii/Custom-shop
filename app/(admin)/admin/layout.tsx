@@ -3,7 +3,8 @@ import React, {ReactNode, useState} from "react";
 import Sidebar from "@/app/(admin)/admin/component/sidebar";
 import { Bars4Icon } from "@heroicons/react/24/solid";
 import LogoMobile from "@/component/layout/header/icon/logo-mobile";
-export default function RootLayout({children}: Readonly<{
+import dynamic from "next/dynamic";
+ function RootLayout({children}: Readonly<{
     children: ReactNode;
 
 }>) {
@@ -29,3 +30,4 @@ export default function RootLayout({children}: Readonly<{
         </>
     );
 }
+export default dynamic(() => Promise.resolve(RootLayout), { ssr: false })

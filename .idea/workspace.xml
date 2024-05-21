@@ -10,19 +10,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase three">
-      <change afterPath="$PROJECT_DIR$/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase_[Changes]1/shelved.patch" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/shelf/Uncommitted_changes_before_rebase__Changes_1.xml" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/category/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/category/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/subcategory/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/subcategory/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/component/cart-product/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/core/service/http-service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/core/service/http-service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -37,14 +33,13 @@
       <list>
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
-        <option value="JavaScript File" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="develop" />
+        <entry key="$PROJECT_DIR$" value="phase-three" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -98,7 +93,7 @@
     "npm.build.executor": "Run",
     "npm.dev.executor": "Run",
     "settings.editor.selected.configurable": "preferences.pluginManager",
-    "ts.external.directory.path": "C:\\Program Files\\JetBrains\\CLion 2024.1.1\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "ts.external.directory.path": "C:\\Users\\HUAWEI\\CLionProjects\\Custom-shop\\node_modules\\typescript\\lib",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -111,15 +106,15 @@
       <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\HUAWEI\CLionProjects\Custom-shop\app\(admin)\admin\component" />
       <recent name="$PROJECT_DIR$/app/(pay)" />
       <recent name="$PROJECT_DIR$/app/(shop)" />
       <recent name="D:\html-js-maktab\final project next" />
       <recent name="D:\html-js-maktab\final project next\app\(authentication)" />
-      <recent name="D:\html-js-maktab\final project next\app\(shop)\products" />
     </key>
   </component>
-  <component name="RunManager">
-    <configuration name="build" type="js.build_tools.npm" nameIsGenerated="true">
+  <component name="RunManager" selected="npm.build">
+    <configuration name="build" type="js.build_tools.npm">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
@@ -129,6 +124,20 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="dev" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="node" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="npm.dev" />
+      <item itemvalue="npm.build" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -196,7 +205,7 @@
       <workItem from="1712404791290" duration="4793000" />
       <workItem from="1712415976514" duration="3100000" />
       <workItem from="1712420551198" duration="5635000" />
-      <workItem from="1715945368242" duration="2601000" />
+      <workItem from="1716302507408" duration="2791000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />

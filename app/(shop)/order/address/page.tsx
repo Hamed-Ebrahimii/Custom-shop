@@ -12,10 +12,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { RootState } from "@/redux/store";
 import { addOrder } from "@/redux/slice/orderSlice";
 const Address = () => {
-    const id = sessionStorage.getItem('userId')
+    // const id = sessionStorage.getItem('userId')
     const { data } = useQuery({
         queryKey: ["address"],
-        queryFn: () => getUserById(id || '')
+        queryFn: () => getUserById( '')
     })
     const order = useSelector((selector : RootState) => selector.order)
     const dispatch = useDispatch()
@@ -29,7 +29,8 @@ const Address = () => {
     return (
         <div className={'w-full flex py-8 px-12'}>
             <div className={'w-8/12 space-y-4'}>
-                <p className={'text-lg font-medium'}>آدرس</p>
+                <p className={'t' +
+                    'ext-lg font-medium'}>آدرس</p>
                 <hr />
                 <div className={'mt-6 space-y-4 flex flex-col items-center justify-center'}>
                     <AddressBox user={data?.data.data || { user: { _id: "", address: '', createdAt: '', firstname: '', lastname: "", phoneNumber: '', role: '', updatedAt: '', username: '' } }} />

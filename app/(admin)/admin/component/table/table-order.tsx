@@ -87,9 +87,9 @@ export function Table({ tableHeade, tableRow }: { tableHeade: string[], tableRow
                                     : "p-4 border-b border-blue-gray-50";
 
                                 return (
-                                    <>
 
-                                        <tr key={user}>
+
+                                        <tr key={_id}>
                                             <td className={classes} >
                                                 <Username id={user} />
                                             </td>
@@ -126,7 +126,7 @@ export function Table({ tableHeade, tableRow }: { tableHeade: string[], tableRow
                                                 </Tooltip>
                                             </td>
                                         </tr>
-                                    </>
+
                                 );
                             },
                             )}

@@ -9,8 +9,7 @@ import AddProduct from "@/app/(admin)/admin/product/component/addProduct";
 import Loading from "@/component/loading/loading";
 import {getAllOrders} from "@/api/getAllOrders";
 import TableOrder from "@/app/(admin)/admin/component/table/table-order";
-import { Suspense } from 'react'
-
+export const dynamicParams = true
 const Order = () =>{
     const params = useSearchParams()
     const page = params.get('page')
@@ -37,7 +36,7 @@ const Order = () =>{
     ];
 
     return(
-        <Suspense fallback={<div>error</div>}>
+
 
         <>
             {
@@ -98,7 +97,6 @@ const Order = () =>{
                 </CardFooter>
             </div>
         </>
-        </Suspense>
     )
 }
 export default Order

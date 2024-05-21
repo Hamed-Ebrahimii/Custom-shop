@@ -4,12 +4,15 @@ import Query from "@/component/query";
 import { ThemeProvider } from "../component/material";
 import { theme } from "@/component/material/theme";
 import ReduxProvider from "@/redux/provider";
+import { Suspense } from 'react'
+import dynamic from 'next/dynamic'
+
 export default function RootLayout({children,}: {
     children: ReactNode
 }) {
-    
     return (
         <html lang="fa" dir={'rtl'}>
+
         <body className={'font-yekan'}>
             <ReduxProvider>
             <Query>
