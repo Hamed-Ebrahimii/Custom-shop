@@ -9,16 +9,33 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="complete phase three">
-      <change afterPath="$PROJECT_DIR$/app/loading.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="69a500c1-d945-43aa-a06a-46806cc68a44" name="Changes" comment="fix bog build">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/(shop)/order/address/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/category/component/addCategory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/category/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/box.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/chart/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/sidebar/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/Table.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-edite.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-order.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row-subcategory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/table-row.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/tableCategory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/component/table/tableSubCategory.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/inventory/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/layout.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/component/modal/info.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/component/radio/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/orders/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/component/textEditor.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/addProduct/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/deleteProduct/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/component/editProduct/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/product/page.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/subcategory/component/index.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/(admin)/admin/subcategory/page.tsx" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -205,7 +222,7 @@
       <workItem from="1712404791290" duration="4793000" />
       <workItem from="1712415976514" duration="3100000" />
       <workItem from="1712420551198" duration="5635000" />
-      <workItem from="1716302507408" duration="2791000" />
+      <workItem from="1716302507408" duration="3664000" />
     </task>
     <task id="LOCAL-00001" summary="first commit">
       <option name="closed" value="true" />
@@ -287,7 +304,15 @@
       <option name="project" value="LOCAL" />
       <updated>1711698109050</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="fix bog build">
+      <option name="closed" value="true" />
+      <created>1716309010757</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1716309010757</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -318,6 +343,7 @@
     <MESSAGE value="add table editable" />
     <MESSAGE value="add page product" />
     <MESSAGE value="complete phase three" />
-    <option name="LAST_COMMIT_MESSAGE" value="complete phase three" />
+    <MESSAGE value="fix bog build" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix bog build" />
   </component>
 </project>
